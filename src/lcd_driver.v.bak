@@ -1,0 +1,47 @@
+
+//lcd interface
+/*
+读写模式,read:处理器到LCD
+LCD_RW 		PIN_F3 LCD Read/Write Select, 0 = Write, 1 = Read 
+使能LCD芯片
+LCD_EN 		PIN_E2 LCD Enable 
+选择传输数据/指令,0时传输指令,1时传数据
+LCD_RS 		PIN_F2 LCD Command/Data Select, 0 = Command, 1 = Data 
+LCD电源
+LCD_ON 		PIN_F1 LCD Power ON/OFF 
+LCD背光电源
+LCD_BLON 	PIN_G3 LCD Back Light ON/OFF 
+
+module lcd(data, rw, en, rs, no);
+	input [7:0]data;
+	
+endmodule 
+
+*/
+
+
+module lcd_driver(iCLK_50,iKEY,oLCD_ON,oLCD_BLON,oLCD_RW,oLCD_EN,oLCD_RS,LCD_D);
+  input iCLK_50;
+  input [0:0]   iKEY;
+  inout [7:0]   LCD_D;
+  
+  output oLCD_ON;
+  output oLCD_BLON;
+  output        oLCD_RW;
+  output  oLCD_EN;
+  output    oLCD_RS;
+        
+  assign   oLCD_ON = 1'b1;
+  assign   oLCD_BLON = 1'b1;
+
+
+  // SOPC System Instance
+  HelloWorld_System Sys(
+              .clk(iCLK_50),
+              .reset_n(iKEY[0]),
+              .LCD_E_from_the_lcd(oLCD_EN),
+              .LCD_RS_from_the_lcd(oLCD_RS),
+              .LCD_RW_from_the_lcd(oLCD_RW),
+              .LCD_data_to_and_from_the_lcd(LCD_D)
+            );
+endmodule

@@ -1,0 +1,46 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 13.555 ns
+From           : clk_div_2sec:comb_152|clk_out
+To             : LCD_DATA[1]
+From Clock     : CLOCK_50
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 8.914 ns
+From           : SW[17]
+To             : LEDR[17]
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLOCK_50'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 138.50 MHz ( period = 7.220 ns )
+From           : clk_div_2sec:comb_152|i[0]
+To             : clk_div_2sec:comb_152|clk_out
+From Clock     : CLOCK_50
+To Clock       : CLOCK_50
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+
