@@ -1,16 +1,12 @@
 
 //lcd interface
 /*
-读写模式,read:处理器到LCD
-LCD_RW 		PIN_F3 LCD Read/Write Select, 0 = Write, 1 = Read 
-使能LCD芯片
-LCD_EN 		PIN_E2 LCD Enable 
-选择传输数据/指令,0时传输指令,1时传数据
-LCD_RS 		PIN_F2 LCD Command/Data Select, 0 = Command, 1 = Data 
-LCD电源
-LCD_ON 		PIN_F1 LCD Power ON/OFF 
-LCD背光电源
-LCD_BLON 	PIN_G3 LCD Back Light ON/OFF 
+LCD_DATA[7:0]  PIN_B2 LCD Data[7:0] 
+LCD_RW 		   PIN_F3 LCD Read/Write Select, 0 = Write, 1 = Read 
+LCD_EN 		   PIN_E2 LCD Enable 
+LCD_RS 		   PIN_F2 LCD Command/Data Select, 0 = Command, 1 = Data 
+LCD_ON 		   PIN_F1 LCD Power ON/OFF 
+LCD_BLON 	   PIN_G3 LCD Back Light ON/OFF 
 
 module lcd(data, rw, en, rs, no, blon);
 	input [7:0]data;
@@ -124,6 +120,9 @@ mux_2x1 u3 ( LCD_EN1,
 
 endmodule
 
+
+
+
 module  mux_2x1(
   input LCD_EN1,
   input LCD_EN2,
@@ -164,19 +163,19 @@ module  mux_2x1(
 
 
 module lcd1_1602(sysclk, rst_n, lcd_en, lcd_rs, lcd_rw, lcd_data ); 
- input sysclk; //系統時鐘 50MHZ 
- input rst_n; //復位信號，低電平有效；  
+ input sysclk; //??y?r? 50MHZ 
+ input rst_n; //??λ???????????Ч??  
 
- output lcd_en; //讀寫使能信號，高電平有效； 
- output reg lcd_rs; //數據命令選擇端(H/L)； 
- output lcd_rw; //讀寫選擇端(H/L); 
- output reg [7:0] lcd_data; //8位數據口；  
+ output lcd_en; //?x????????????????Ч?? 
+ output reg lcd_rs; //?????????x???(H/L)?? 
+ output lcd_rw; //?x???x???(H/L); 
+ output reg [7:0] lcd_data; //8λ???????  
 
 
  parameter [127:0]row2="  hello world!  "; 
- //因為lcd1602每一行可顯示16個字符，一個字符占8位； 
+ //???lcd1602???п??@?16??????????????8λ?? 
  parameter [127:0]row1="  I like FPGA!  "; 
- //所以每一行一共有16*8=128位；  
+ //?????????????16*8=128λ??  
 
  reg [15:0] time_cnt; 
 
@@ -191,17 +190,17 @@ module lcd1_1602(sysclk, rst_n, lcd_en, lcd_rs, lcd_rw, lcd_data );
   assign lcd_rw=1'b0; 
   assign lcd_en=time_cnt[15]; 
   wire state_flag ; 
-  //狀態標誌位 ,因為FPGA的運算速度比LCD1602要快的多， 
-  //所以必須要等到LCD1602穩定後才往裏面寫數據； 
+  //??B???Iλ ,???FPGA???\??????LCD1602????? 
+  //??????????LCD1602??????????Y?挑?????? 
   
   assign state_flag=(time_cnt==16'h7fff)?1'b1:1'b0 ; 
-  //lcd_en最小值500ns ,所以lcd_en的頻率應維持在2MHZ以內；   
+  //lcd_en??С?500ns ,????lcd_en???l????S????2MHZ????   
   
   parameter IDLE=8'h00; //lcd1602 initial; 
-  parameter INI_SET=8'h01; //顯示工作模式設置；  
-  parameter INI_CLR=8'h02; //清屏顯示；  
-  parameter CURSOR_SET1=8'h03; // 光標設置1；  
-  parameter CURSOR_SET2=8'h04; //光標設置2；  
+  parameter INI_SET=8'h01; //?@????????O???  
+  parameter INI_CLR=8'h02; //?????@???  
+  parameter CURSOR_SET1=8'h03; // ????O??1??  
+  parameter CURSOR_SET2=8'h04; //????O??2??  
   
   //display line 1; 
   parameter LINE1_ADDER=8'h05;  
@@ -484,15 +483,15 @@ module lcd1_1602(sysclk, rst_n, lcd_en, lcd_rs, lcd_rw, lcd_data );
   /* case(next_state) 
      IDLE   : lcd_data <=8'hxx;  
      INI_SET  : lcd_data <=8'h38; 
-     //設置16*2顯示，5*7點陣，8位數據接口；  
-     INI_CLR  : lcd_data <=8'h01; //清屏顯示；  
+     //?O??16*2?@???5*7?c??8λ????????  
+     INI_CLR  : lcd_data <=8'h01; //?????@???  
      CURSOR_SET1: lcd_data <=8'h06; 
-     //寫一個字符後地址指針加一；   
+     //??????????????????   
      CURSOR_SET2: lcd_data <=8'h0c; 
-     //設置開顯示，不顯示光標； 
+     //?O???_?@??????@????? 
      //line1  
      LINE1_ADDER: lcd_data <=8'h80; 
-     //LCD1602第一行 首地址；   
+     //LCD1602????? ??????   
      LINE1_0  : lcd_data <=row1[127:120]; 
      LINE1_1  : lcd_data <=row1[119:112]; 
      LINE1_2  : lcd_data <=row1[111:104]; 
@@ -512,7 +511,7 @@ module lcd1_1602(sysclk, rst_n, lcd_en, lcd_rs, lcd_rw, lcd_data );
      
      //line2 
      LINE2_ADDER: lcd_data <=8'hC0; 
-     //LCD1602第二行首地址(8'h80+8'h40=8'hC0) 
+     //LCD1602?????????(8'h80+8'h40=8'hC0) 
      LINE2_0  : lcd_data <=row2[127:120]; 
      LINE2_1  : lcd_data <=row2[119:112]; 
      LINE2_2  : lcd_data <=row2[111:104]; 
@@ -541,20 +540,20 @@ endmodule
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 module lcd2_1602(sysclk, rst_n, lcd_en, lcd_rs, lcd_rw, lcd_data ); 
- input sysclk; //系統時鐘 50MHZ 
- input rst_n; //復位信號，低電平有效；  
+ input sysclk; //??y?r? 50MHZ 
+ input rst_n; //??λ???????????Ч??  
 
 
- output lcd_en; //讀寫使能信號，高電平有效； 
- output reg lcd_rs; //數據命令選擇端(H/L)； 
- output lcd_rw; //讀寫選擇端(H/L); 
- output reg [7:0] lcd_data; //8位數據口；  
+ output lcd_en; //?x????????????????Ч?? 
+ output reg lcd_rs; //?????????x???(H/L)?? 
+ output lcd_rw; //?x???x???(H/L); 
+ output reg [7:0] lcd_data; //8λ???????  
 
 
  parameter [127:0]row1="    hello world!"; 
- //因為lcd1602每一行可顯示16個字符，一個字符占8位； 
+ //???lcd1602???п??@?16??????????????8λ?? 
  parameter [127:0]row2="    I like FPGA!"; 
- //所以每一行一共有16*8=128位；  
+ //?????????????16*8=128λ??  
 
  reg [15:0] time_cnt; 
 
@@ -569,17 +568,17 @@ module lcd2_1602(sysclk, rst_n, lcd_en, lcd_rs, lcd_rw, lcd_data );
   assign lcd_rw=1'b0; 
   assign lcd_en=time_cnt[15]; 
   wire state_flag ; 
-  //狀態標誌位 ,因為FPGA的運算速度比LCD1602要快的多， 
-  //所以必須要等到LCD1602穩定後才往裏面寫數據； 
+  //??B???Iλ ,???FPGA???\??????LCD1602????? 
+  //??????????LCD1602??????????Y?挑?????? 
   
   assign state_flag=(time_cnt==16'h7fff)?1'b1:1'b0 ; 
-  //lcd_en最小值500ns ,所以lcd_en的頻率應維持在2MHZ以內；   
+  //lcd_en??С?500ns ,????lcd_en???l????S????2MHZ????   
   
   parameter IDLE=8'h00; //lcd1602 initial; 
-  parameter INI_SET=8'h01; //顯示工作模式設置；  
-  parameter INI_CLR=8'h02; //清屏顯示；  
-  parameter CURSOR_SET1=8'h03; // 光標設置1；  
-  parameter CURSOR_SET2=8'h04; //光標設置2；  
+  parameter INI_SET=8'h01; //?@????????O???  
+  parameter INI_CLR=8'h02; //?????@???  
+  parameter CURSOR_SET1=8'h03; // ????O??1??  
+  parameter CURSOR_SET2=8'h04; //????O??2??  
   
   //display line 1; 
   parameter LINE1_ADDER=8'h05;  

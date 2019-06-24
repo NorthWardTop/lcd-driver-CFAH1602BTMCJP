@@ -1,0 +1,2911 @@
+<!DOCTYPE html>
+<!-- saved from url=(0088)http://alex9ufoexploer.blogspot.com/2014/05/displays-value-of-sw70-as-two-digits-in.html -->
+<html class="v2" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/3597120983-css_bundle_v2.css" rel="stylesheet" type="text/css">
+<meta content="width=1100" name="viewport">
+
+<meta content="blogger" name="generator">
+<link href="http://alex9ufoexploer.blogspot.com/favicon.ico" rel="icon" type="image/x-icon">
+<link href="http://alex9ufoexploer.blogspot.com/2014/05/displays-value-of-sw70-as-two-digits-in.html" rel="canonical">
+<link rel="alternate" type="application/atom+xml" title="alex9ufo  聰明人求知心切 - Atom" href="http://alex9ufoexploer.blogspot.com/feeds/posts/default">
+<link rel="alternate" type="application/rss+xml" title="alex9ufo  聰明人求知心切 - RSS" href="http://alex9ufoexploer.blogspot.com/feeds/posts/default?alt=rss">
+<link rel="service.post" type="application/atom+xml" title="alex9ufo  聰明人求知心切 - Atom" href="https://www.blogger.com/feeds/2769060068368517893/posts/default">
+
+<link rel="alternate" type="application/atom+xml" title="alex9ufo  聰明人求知心切 - Atom" href="http://alex9ufoexploer.blogspot.com/feeds/8265535189684909515/comments/default">
+<!--[if IE]><script type="text/javascript" src="https://www.blogger.com/static/v1/jsbin/3399642339-ieretrofit.js"></script>
+<![endif]-->
+<meta content="http://alex9ufoexploer.blogspot.com/2014/05/displays-value-of-sw70-as-two-digits-in.html" property="og:url">
+<meta content="顯示 SW[7:0] 2個位數在LCD上---適用於DE2-70" property="og:title">
+<meta content="displays the value of SW[7:0] as two digits in the LCD.  源自於  http://www.johnloomis.org/digitallab/lcdlab/lcdlab3/lcdlab3.qdoc.html     Veri..." property="og:description">
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>alex9ufo  聰明人求知心切: 顯示 SW[7:0] 2個位數在LCD上---適用於DE2-70</title>
+<style id="page-skin-1" type="text/css"><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Watermark
+Designer: Josh Peterson
+URL:      www.noaesthetic.com
+----------------------------------------------- */
+/* Variable definitions
+====================
+<Variable name="keycolor" description="Main Color" type="color" default="#c0a154"/>
+<Group description="Page Text" selector="body">
+<Variable name="body.font" description="Font" type="font"
+default="normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="body.text.color" description="Text Color" type="color" default="#333333"/>
+</Group>
+<Group description="Backgrounds" selector=".main-inner">
+<Variable name="body.background.color" description="Outer Background" type="color" default="#c0a154"/>
+<Variable name="footer.background.color" description="Footer Background" type="color" default="transparent"/>
+</Group>
+<Group description="Links" selector=".main-inner">
+<Variable name="link.color" description="Link Color" type="color" default="#cc3300"/>
+<Variable name="link.visited.color" description="Visited Color" type="color" default="#993322"/>
+<Variable name="link.hover.color" description="Hover Color" type="color" default="#ff3300"/>
+</Group>
+<Group description="Blog Title" selector=".header h1">
+<Variable name="header.font" description="Title Font" type="font"
+default="normal normal 60px Georgia, Utopia, 'Palatino Linotype', Palatino, serif"/>
+<Variable name="header.text.color" description="Title Color" type="color" default="#ffffff" />
+</Group>
+<Group description="Blog Description" selector=".header .description">
+<Variable name="description.text.color" description="Description Color" type="color"
+default="#997755" />
+</Group>
+<Group description="Tabs Text" selector=".tabs-inner .widget li a">
+<Variable name="tabs.font" description="Font" type="font"
+default="normal normal 20px Georgia, Utopia, 'Palatino Linotype', Palatino, serif"/>
+<Variable name="tabs.text.color" description="Text Color" type="color" default="#cc3300"/>
+<Variable name="tabs.selected.text.color" description="Selected Color" type="color" default="#000000"/>
+</Group>
+<Group description="Tabs Background" selector=".tabs-outer .PageList">
+<Variable name="tabs.background.color" description="Background Color" type="color" default="transparent"/>
+<Variable name="tabs.separator.color" description="Separator Color" type="color" default="#77ccee"/>
+</Group>
+<Group description="Date Header" selector="h2.date-header">
+<Variable name="date.font" description="Font" type="font"
+default="normal normal 16px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="date.text.color" description="Text Color" type="color" default="#997755"/>
+</Group>
+<Group description="Post" selector="h3.post-title, .comments h4">
+<Variable name="post.title.font" description="Title Font" type="font"
+default="normal normal 30px Georgia, Utopia, 'Palatino Linotype', Palatino, serif"/>
+<Variable name="post.background.color" description="Background Color" type="color" default="transparent"/>
+<Variable name="post.border.color" description="Border Color" type="color" default="#ccbb99" />
+</Group>
+<Group description="Post Footer" selector=".post-footer">
+<Variable name="post.footer.text.color" description="Text Color" type="color" default="#997755"/>
+</Group>
+<Group description="Gadgets" selector="h2">
+<Variable name="widget.title.font" description="Title Font" type="font"
+default="normal normal 20px Georgia, Utopia, 'Palatino Linotype', Palatino, serif"/>
+<Variable name="widget.title.text.color" description="Title Color" type="color" default="#000000"/>
+<Variable name="widget.alternate.text.color" description="Alternate Color" type="color" default="#777777"/>
+</Group>
+<Group description="Footer" selector=".footer-inner">
+<Variable name="footer.text.color" description="Text Color" type="color" default="#333333"/>
+<Variable name="footer.widget.title.text.color" description="Gadget Title Color" type="color" default="#336600"/>
+</Group>
+<Group description="Footer Links" selector=".footer-inner">
+<Variable name="footer.link.color" description="Link Color" type="color" default="#cc3300"/>
+<Variable name="footer.link.visited.color" description="Visited Color" type="color" default="#993322"/>
+<Variable name="footer.link.hover.color" description="Hover Color" type="color" default="#ff3300"/>
+</Group>
+<Variable name="body.background" description="Body Background" type="background"
+color="#77ccee" default="$(color) url(//www.blogblog.com/1kt/watermark/body_background_birds.png) repeat scroll top left"/>
+<Variable name="body.background.overlay" description="Overlay Background" type="background" color="#77ccee"
+default="transparent url(//www.blogblog.com/1kt/watermark/body_overlay_birds.png) no-repeat scroll top right"/>
+<Variable name="body.background.overlay.height" description="Overlay Background Height" type="length" default="121px" min="0" max="1000px"/>
+<Variable name="tabs.background.inner" description="Tabs Background Inner" type="url" default="none"/>
+<Variable name="tabs.background.outer" description="Tabs Background Outer" type="url" default="none"/>
+<Variable name="tabs.border.size" description="Tabs Border Size" type="length" default="0" min="0" max="10px"/>
+<Variable name="tabs.shadow.spread" description="Tabs Shadow Spread" type="length" default="0" min="0" max="100px"/>
+<Variable name="main.padding.top" description="Main Padding Top" type="length" default="30px" min="0" max="100px"/>
+<Variable name="main.cap.height" description="Main Cap Height" type="length" default="0" min="0" max="100px"/>
+<Variable name="main.cap.image" description="Main Cap Image" type="url" default="none"/>
+<Variable name="main.cap.overlay" description="Main Cap Overlay" type="url" default="none"/>
+<Variable name="main.background" description="Main Background" type="background"
+default="transparent none no-repeat scroll top left"/>
+<Variable name="post.background.url" description="Post Background URL" type="url"
+default="url(//www.blogblog.com/1kt/watermark/post_background_birds.png)"/>
+<Variable name="post.border.size" description="Post Border Size" type="length" default="1px" min="0" max="10px"/>
+<Variable name="post.border.style" description="Post Border Style" type="string" default="dotted"/>
+<Variable name="post.shadow.spread" description="Post Shadow Spread" type="length" default="0" min="0" max="100px"/>
+<Variable name="footer.background" description="Footer Background" type="background"
+color="#331100" default="$(color) url(//www.blogblog.com/1kt/watermark/body_background_navigator.png) repeat scroll top left"/>
+<Variable name="mobile.background.overlay" description="Mobile Background Overlay" type="string"
+default="transparent none repeat scroll top left"/>
+<Variable name="startSide" description="Side where text starts in blog language" type="automatic" default="left"/>
+<Variable name="endSide" description="Side where text ends in blog language" type="automatic" default="right"/>
+*/
+/* Use this with templates/1ktemplate-*.html */
+/* Content
+----------------------------------------------- */
+body {
+font: normal normal 15px Georgia, Utopia, 'Palatino Linotype', Palatino, serif;
+color: #333333;
+background: #77ccee url(//www.blogblog.com/1kt/watermark/body_background_flower.png) repeat scroll top left;
+}
+html body .content-outer {
+min-width: 0;
+max-width: 100%;
+width: 100%;
+}
+.content-outer {
+font-size: 92%;
+}
+a:link {
+text-decoration:none;
+color: #cc3300;
+}
+a:visited {
+text-decoration:none;
+color: #993322;
+}
+a:hover {
+text-decoration:underline;
+color: #ff3300;
+}
+.body-fauxcolumns .cap-top {
+margin-top: 30px;
+background: transparent none no-repeat scroll top left;
+height: 0;
+}
+.content-inner {
+padding: 0;
+}
+/* Header
+----------------------------------------------- */
+.header-inner .Header .titlewrapper,
+.header-inner .Header .descriptionwrapper {
+padding-left: 20px;
+padding-right: 20px;
+}
+.Header h1 {
+font: normal normal 60px Georgia, Utopia, 'Palatino Linotype', Palatino, serif;
+color: #ffffff;
+text-shadow: 2px 2px rgba(0, 0, 0, .1);
+}
+.Header h1 a {
+color: #ffffff;
+}
+.Header .description {
+font-size: 140%;
+color: #5588aa;
+}
+/* Tabs
+----------------------------------------------- */
+.tabs-inner .section {
+margin: 0 20px;
+}
+.tabs-inner .PageList, .tabs-inner .LinkList, .tabs-inner .Labels {
+margin-left: -11px;
+margin-right: -11px;
+background-color: transparent;
+border-top: 0 solid #ffffff;
+border-bottom: 0 solid #ffffff;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .3);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .3);
+-goog-ms-box-shadow: 0 0 0 rgba(0, 0, 0, .3);
+box-shadow: 0 0 0 rgba(0, 0, 0, .3);
+}
+.tabs-inner .PageList .widget-content,
+.tabs-inner .LinkList .widget-content,
+.tabs-inner .Labels .widget-content {
+margin: -3px -11px;
+background: transparent none  no-repeat scroll right;
+}
+.tabs-inner .widget ul {
+padding: 2px 25px;
+max-height: 34px;
+background: transparent none no-repeat scroll left;
+}
+.tabs-inner .widget li {
+border: none;
+}
+.tabs-inner .widget li a {
+display: inline-block;
+padding: .25em 1em;
+font: normal normal 20px Georgia, Utopia, 'Palatino Linotype', Palatino, serif;
+color: #cc3300;
+border-right: 1px solid #77ccee;
+}
+.tabs-inner .widget li:first-child a {
+border-left: 1px solid #77ccee;
+}
+.tabs-inner .widget li.selected a, .tabs-inner .widget li a:hover {
+color: #000000;
+}
+/* Headings
+----------------------------------------------- */
+h2 {
+font: normal normal 20px Georgia, Utopia, 'Palatino Linotype', Palatino, serif;
+color: #336600;
+margin: 0 0 .5em;
+}
+h2.date-header {
+font: normal normal 18px Georgia, Utopia, 'Palatino Linotype', Palatino, serif;
+color: #336600;
+}
+/* Main
+----------------------------------------------- */
+.main-inner .column-center-inner,
+.main-inner .column-left-inner,
+.main-inner .column-right-inner {
+padding: 0 5px;
+}
+.main-outer {
+margin-top: 100px;
+background: #66bb33 url(//www.blogblog.com/1kt/watermark/body_background_flower.png) repeat scroll top center;
+}
+.main-inner {
+padding-top: 0;
+}
+.main-cap-top {
+position: relative;
+}
+.main-cap-top .cap-right {
+position: absolute;
+height: 100px;
+width: 100%;
+bottom: 0;
+background: transparent url(//www.blogblog.com/1kt/watermark/main_cap_flower.png) repeat-x scroll bottom center;
+}
+.main-cap-top .cap-left {
+position: absolute;
+height: 245px;
+width: 280px;
+right: 0;
+bottom: 0;
+background: transparent url(//www.blogblog.com/1kt/watermark/main_overlay_flower.png) no-repeat scroll bottom left;
+}
+/* Posts
+----------------------------------------------- */
+.post-outer {
+padding: 15px 20px;
+margin: 0 0 25px;
+background: transparent url(//www.blogblog.com/1kt/watermark/post_background_birds.png) repeat scroll top left;
+_background-image: none;
+border: dotted 1px transparent;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+-goog-ms-box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+}
+h3.post-title {
+font: normal normal 30px Georgia, Utopia, 'Palatino Linotype', Palatino, serif;
+margin: 0;
+}
+.comments h4 {
+font: normal normal 30px Georgia, Utopia, 'Palatino Linotype', Palatino, serif;
+margin: 1em 0 0;
+}
+.post-body {
+font-size: 105%;
+line-height: 1.5;
+position: relative;
+}
+.post-header {
+margin: 0 0 1em;
+color: #997755;
+}
+.post-footer {
+margin: 10px 0 0;
+padding: 10px 0 0;
+color: #997755;
+border-top: dashed 1px #777777;
+}
+#blog-pager {
+font-size: 140%
+}
+#comments .comment-author {
+padding-top: 1.5em;
+border-top: dashed 1px #777777;
+background-position: 0 1.5em;
+}
+#comments .comment-author:first-child {
+padding-top: 0;
+border-top: none;
+}
+.avatar-image-container {
+margin: .2em 0 0;
+}
+/* Comments
+----------------------------------------------- */
+.comments .comments-content .icon.blog-author {
+background-repeat: no-repeat;
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB9sLFwMeCjjhcOMAAAD+SURBVDjLtZSvTgNBEIe/WRRnm3U8RC1neQdsm1zSBIU9VVF1FkUguQQsD9ITmD7ECZIJSE4OZo9stoVjC/zc7ky+zH9hXwVwDpTAWWLrgS3QAe8AZgaAJI5zYAmc8r0G4AHYHQKVwII8PZrZFsBFkeRCABYiMh9BRUhnSkPTNCtVXYXURi1FpBDgArj8QU1eVXUzfnjv7yP7kwu1mYrkWlU33vs1QNu2qU8pwN0UpKoqokjWwCztrMuBhEhmh8bD5UDqur75asbcX0BGUB9/HAMB+r32hznJgXy2v0sGLBcyAJ1EK3LFcbo1s91JeLwAbwGYu7TP/3ZGfnXYPgAVNngtqatUNgAAAABJRU5ErkJggg==);
+}
+.comments .comments-content .loadmore a {
+border-top: 1px solid #777777;
+border-bottom: 1px solid #777777;
+}
+.comments .continue {
+border-top: 2px solid #777777;
+}
+/* Widgets
+----------------------------------------------- */
+.widget ul, .widget #ArchiveList ul.flat {
+padding: 0;
+list-style: none;
+}
+.widget ul li, .widget #ArchiveList ul.flat li {
+padding: .35em 0;
+text-indent: 0;
+border-top: dashed 1px #777777;
+}
+.widget ul li:first-child, .widget #ArchiveList ul.flat li:first-child {
+border-top: none;
+}
+.widget .post-body ul {
+list-style: disc;
+}
+.widget .post-body ul li {
+border: none;
+}
+.widget .zippy {
+color: #777777;
+}
+.post-body img, .post-body .tr-caption-container, .Profile img, .Image img,
+.BlogList .item-thumbnail img {
+padding: 5px;
+background: #fff;
+-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+-goog-ms-box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+}
+.post-body img, .post-body .tr-caption-container {
+padding: 8px;
+}
+.post-body .tr-caption-container {
+color: #333333;
+}
+.post-body .tr-caption-container img {
+padding: 0;
+background: transparent;
+border: none;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+-goog-ms-box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+}
+/* Footer
+----------------------------------------------- */
+.footer-outer {
+color:#ffffff;
+background: #331100 url(//www.blogblog.com/1kt/watermark/body_background_navigator.png) repeat scroll top left;
+}
+.footer-outer a {
+color: #ffdd99;
+}
+.footer-outer a:visited {
+color: #eecc77;
+}
+.footer-outer a:hover {
+color: #ffffcc;
+}
+.footer-outer .widget h2 {
+color: #ffffff;
+}
+/* Mobile
+----------------------------------------------- */
+body.mobile  {
+background-size: 100% auto;
+}
+.mobile .body-fauxcolumn-outer {
+background: transparent none repeat scroll top left;
+}
+html .mobile .mobile-date-outer {
+border-bottom: none;
+background: transparent url(//www.blogblog.com/1kt/watermark/post_background_birds.png) repeat scroll top left;
+_background-image: none;
+margin-bottom: 10px;
+}
+.mobile .main-inner .date-outer {
+padding: 0;
+}
+.mobile .main-inner .date-header {
+margin: 10px;
+}
+.mobile .main-cap-top {
+z-index: -1;
+}
+.mobile .content-outer {
+font-size: 100%;
+}
+.mobile .post-outer {
+padding: 10px;
+}
+.mobile .main-cap-top .cap-left {
+background: transparent none no-repeat scroll bottom left;
+}
+.mobile .body-fauxcolumns .cap-top {
+margin: 0;
+}
+.mobile-link-button {
+background: transparent url(//www.blogblog.com/1kt/watermark/post_background_birds.png) repeat scroll top left;
+}
+.mobile-link-button a:link, .mobile-link-button a:visited {
+color: #cc3300;
+}
+.mobile-index-date .date-header {
+color: #336600;
+}
+.mobile-index-contents {
+color: #333333;
+}
+.mobile .tabs-inner .section {
+margin: 0;
+}
+.mobile .tabs-inner .PageList {
+margin-left: 0;
+margin-right: 0;
+}
+.mobile .tabs-inner .PageList .widget-content {
+margin: 0;
+color: #000000;
+background: transparent url(//www.blogblog.com/1kt/watermark/post_background_birds.png) repeat scroll top left;
+}
+.mobile .tabs-inner .PageList .widget-content .pagelist-arrow {
+border-left: 1px solid #77ccee;
+}
+
+--></style>
+<style id="template-skin-1" type="text/css"><!--
+body {
+min-width: 1140px;
+}
+.content-outer, .content-fauxcolumn-outer, .region-inner {
+min-width: 1140px;
+max-width: 1140px;
+_width: 1140px;
+}
+.main-inner .columns {
+padding-left: 0;
+padding-right: 310px;
+}
+.main-inner .fauxcolumn-center-outer {
+left: 0;
+right: 310px;
+/* IE6 does not respect left and right together */
+_width: expression(this.parentNode.offsetWidth -
+parseInt("0") -
+parseInt("310px") + 'px');
+}
+.main-inner .fauxcolumn-left-outer {
+width: 0;
+}
+.main-inner .fauxcolumn-right-outer {
+width: 310px;
+}
+.main-inner .column-left-outer {
+width: 0;
+right: 100%;
+margin-left: -0;
+}
+.main-inner .column-right-outer {
+width: 310px;
+margin-right: -310px;
+}
+#layout {
+min-width: 0;
+}
+#layout .content-outer {
+min-width: 0;
+width: 800px;
+}
+#layout .region-inner {
+min-width: 0;
+width: auto;
+}
+--></style>
+<link href="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/authorization.css" media="all" onload="if(media!=&#39;all&#39;)media=&#39;all&#39;" rel="stylesheet"><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=2769060068368517893&amp;zx=b9d93843-3cf9-4c90-b79b-5b379ae7daab' rel='stylesheet'/></noscript>
+
+<script src="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/cb=gapi.loaded_3" async=""></script><script src="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/cb=gapi.loaded_2" async=""></script><script type="text/javascript" src="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/f.txt"></script><style>.gc-bubbleDefault{background-color:transparent !important;text-align:left;padding:0 !important;margin:0 !important;border:0 !important;table-layout:auto !important}.gc-reset{background-color:transparent !important;border:0 !important;padding:0 !important;margin:0 !important;text-align:left}.pls-bubbleTop{border-bottom:1px solid #ccc !important}.pls-topTail,.pls-vertShimLeft,.pls-contentLeft{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/border_3.gif) !important}.pls-topTail{background-repeat:repeat-x !important;background-position:bottom !important}.pls-vertShim{background-color:#fff !important;text-align:right}.tbl-grey .pls-vertShim{background-color:#f5f5f5 !important}.pls-vertShimLeft{background-repeat:repeat-y !important;background-position:right !important;height:4px}.pls-vertShimRight{height:4px}.pls-confirm-container .pls-vertShim{background-color:#fff3c2 !important}.pls-contentWrap{background-color:#fff !important;position:relative !important;vertical-align:top}.pls-contentLeft{background-repeat:repeat-y;background-position:right;vertical-align:top}.pls-dropRight{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropR_3.png) !important;background-repeat:repeat-y !important;vertical-align:top}.pls-vert,.pls-tailleft,.pls-dropTR .pls-dropBR,.pls-dropBL,.pls-vert img{vertical-align:top}.pls-dropBottom{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropB_3.png) !important;background-repeat:repeat-x !important;width:100%;vertical-align:top}.pls-topLeft{background:inherit !important;text-align:right;vertical-align:bottom}.pls-topRight{background:inherit !important;text-align:left;vertical-align:bottom}.pls-bottomLeft{background:inherit !important;text-align:right}.pls-bottomRight{background:inherit !important;text-align:left;vertical-align:top}.pls-tailtop,.pls-tailright,.pls-tailbottom,.pls-tailleft{display:none;position:relative}.pls-tailbottom,.pls-tailtop,.pls-tailright,.pls-tailleft,.pls-dropTR,.pls-dropBR,.pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite_3.png) !important;background-repeat:no-repeat}.tbl-grey .pls-tailbottom,.tbl-grey .pls-tailtop,.tbl-grey .pls-tailright,.tbl-grey .pls-tailleft,.tbl-grey .pls-dropTR,.tbl-grey .pls-dropBR,.tbl-grey .pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite-grey.png) !important}.pls-tailbottom{background-position:-23px 0}.pls-confirm-container .pls-tailbottom{background-position:-23px -10px}.pls-tailtop{background-position:-19px -20px}.pls-tailright{background-position:0 0}.pls-tailleft{background-position:-10px 0}.pls-tailtop{vertical-align:top}.gc-bubbleDefault td{line-height:0;font-size:0}.pls-topLeft img,.pls-topRight img,.pls-tailbottom{vertical-align:bottom}.pls-bottomLeft img,.bubbleDropTR,.pls-dropBottomL img,.pls-dropBottom img,.pls-dropBottomR img,.pls-bottomLeft{vertical-align:top}.pls-dropTR{background-position:0 -22px}.pls-dropBR{background-position:0 -27px}.pls-dropBL{background-position:0 -16px}.pls-spacertop,.pls-spacerright,.pls-spacerbottom,.pls-spacerleft{position:static !important}.pls-spinner{bottom:0;position:absolute;left:0;margin:auto;right:0;top:0} </style><script async="" src="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/lazy.min.js.下载"></script><link type="text/css" rel="stylesheet" charset="UTF-8" href="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/translateelement.css"></head>
+<body class="">
+<div class="navbar section" id="navbar" name="導覽列"><div class="widget Navbar" data-version="1" id="Navbar1"><script src="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/cb=gapi.loaded_1" async=""></script><script src="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/cb=gapi(1).loaded_0" async=""></script><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="" tabindex="0" vspace="0" width="100%" id="navbar-iframe" name="navbar-iframe" src="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/navbar.html"></iframe></div>
+<script type="text/javascript" src="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/plusone.js.下载" gapi_processed="true"></script>
+<script type="text/javascript">
+      gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: 'https://www.blogger.com/navbar.g?targetBlogID\x3d2769060068368517893\x26blogName\x3dalex9ufo++%E8%81%B0%E6%98%8E%E4%BA%BA%E6%B1%82%E7%9F%A5%E5%BF%83%E5%88%87\x26publishMode\x3dPUBLISH_MODE_BLOGSPOT\x26navbarType\x3dLIGHT\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttps://alex9ufoexploer.blogspot.com/search\x26blogLocale\x3dzh_TW\x26v\x3d2\x26homepageUrl\x3dhttp://alex9ufoexploer.blogspot.com/\x26targetPostID\x3d8265535189684909515\x26blogPostOrPageUrl\x3dhttp://alex9ufoexploer.blogspot.com/2014/05/displays-value-of-sw70-as-two-digits-in.html\x26vt\x3d-1226494417557727031',
+              where: document.getElementById("navbar-iframe-container"),
+              id: "navbar-iframe"
+          });
+        }
+      });
+    </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div class="body-fauxcolumns">
+<div class="fauxcolumn-outer body-fauxcolumn-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="content-fauxcolumns">
+<div class="fauxcolumn-outer content-fauxcolumn-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div>
+<div class="content-outer">
+<div class="content-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left content-fauxborder-left">
+<div class="fauxborder-right content-fauxborder-right"></div>
+<div class="content-inner">
+<header>
+<div class="header-outer">
+<div class="header-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left header-fauxborder-left">
+<div class="fauxborder-right header-fauxborder-right"></div>
+<div class="region-inner header-inner">
+<div class="header section" id="header" name="標頭"><div class="widget Header" data-version="1" id="Header1">
+<div id="header-inner">
+<div class="titlewrapper">
+<h1 class="title">
+<a href="http://alex9ufoexploer.blogspot.com/">
+alex9ufo  聰明人求知心切
+</a>
+</h1>
+</div>
+<div class="descriptionwrapper">
+<p class="description"><span>
+</span></p>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="header-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</header>
+<div class="tabs-outer">
+<div class="tabs-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left tabs-fauxborder-left">
+<div class="fauxborder-right tabs-fauxborder-right"></div>
+<div class="region-inner tabs-inner">
+<div class="tabs no-items section" id="crosscol" name="跨欄區"></div>
+<div class="tabs no-items section" id="crosscol-overflow" name="Cross-Column 2"></div>
+</div>
+</div>
+<div class="tabs-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="main-outer">
+<div class="main-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left main-fauxborder-left">
+<div class="fauxborder-right main-fauxborder-right"></div>
+<div class="region-inner main-inner">
+<div class="columns fauxcolumns">
+<div class="fauxcolumn-outer fauxcolumn-center-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="fauxcolumn-outer fauxcolumn-left-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="fauxcolumn-outer fauxcolumn-right-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<!-- corrects IE6 width calculation -->
+<div class="columns-inner">
+<div class="column-center-outer">
+<div class="column-center-inner">
+<div class="main section" id="main" name="主版面"><div class="widget Blog" data-version="1" id="Blog1">
+<div class="blog-posts hfeed">
+
+          <div class="date-outer">
+        
+<h2 class="date-header"><span>2014年5月22日 星期四</span></h2>
+
+          <div class="date-posts">
+        
+<div class="post-outer">
+<div class="post hentry" itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+<meta content="2769060068368517893" itemprop="blogId">
+<meta content="8265535189684909515" itemprop="postId">
+<a name="8265535189684909515"></a>
+<h3 class="post-title entry-title" itemprop="name">
+顯示 SW[7:0] 2個位數在LCD上---適用於DE2-70
+</h3>
+<div class="post-header">
+<div class="post-header-line-1"></div>
+</div>
+<div class="post-body entry-content" id="post-body-8265535189684909515" itemprop="description articleBody">
+<span style="font-family: Verdana, sans-serif;"><b>displays the value of SW[7:0] as two digits in the LCD.</b></span><br>
+<span style="font-family: Verdana, sans-serif;"><b>源自於</b></span><br>
+<span style="font-family: Verdana, sans-serif;"><b>http://www.johnloomis.org/digitallab/lcdlab/lcdlab3/lcdlab3.qdoc.html</b></span><br>
+<b><span style="font-family: Verdana, sans-serif;"><br>
+</span></b><br>
+<h2>
+<span style="font-family: Verdana, sans-serif; font-size: large;">Verilog Files</span></h2>
+<h3>
+<code><span style="font-family: Verdana, sans-serif; font-size: large;">lcdlab3.v</span></code></h3>
+<span style="font-size: large;"><b><span style="font-family: Verdana, sans-serif;"><br></span></b>
+</span><br>
+<pre><span style="font-family: Verdana, sans-serif;"><b><span style="font-size: large;">module lcdlab3(</span>
+  input CLOCK_50,    //    50 MHz clock
+  input [3:0] KEY,      //    Pushbutton[3:0]
+  input [17:0] SW,    //    Toggle Switch[17:0]
+  output [6:0]    HEX0,HEX1,HEX2,HEX3,HEX4,HEX5,HEX6,HEX7,  // Seven Segment Digits
+  output [8:0] LEDG,  //    LED Green
+  output [17:0] LEDR,  //    LED Red
+  inout [35:0] GPIO_0,GPIO_1,    //    GPIO Connections
+//    LCD Module 16X2
+  output LCD_ON,    // LCD Power ON/OFF
+  output LCD_BLON,    // LCD Back Light ON/OFF
+  output LCD_RW,    // LCD Read/Write Select, 0 = Write, 1 = Read
+  output LCD_EN,    // LCD Enable
+  output LCD_RS,    // LCD Command/Data Select, 0 = Command, 1 = Data
+  inout [7:0] LCD_DATA    // LCD Data bus 8 bits
+);
+
+//    All inout port turn to tri-state
+assign    GPIO_0        =    36'hzzzzzzzzz;
+assign    GPIO_1        =    36'hzzzzzzzzz;
+
+wire [6:0] myclock;
+wire RST;
+assign RST = KEY[0];
+
+// reset delay gives some time for peripherals to initialize
+wire DLY_RST;
+Reset_Delay r0(    .iCLK(CLOCK_50),.oRESET(DLY_RST) );
+
+// Send switches to red leds 
+assign LEDR = SW;
+
+// turn LCD ON
+assign    LCD_ON        =    1'b1;
+assign    LCD_BLON    =    1'b1;
+
+wire [3:0] hex1, hex0;
+assign hex1 = SW[7:4];
+assign hex0 = SW[3:0];
+
+
+LCD_Display u1(
+// Host Side
+   .iCLK_50MHZ(CLOCK_50),
+   .iRST_N(DLY_RST),
+   .hex0(hex0),
+   .hex1(hex1),
+// LCD Side
+   .DATA_BUS(LCD_DATA),
+   .LCD_RW(LCD_RW),
+   .LCD_E(LCD_EN),
+   .LCD_RS(LCD_RS)
+);
+
+
+// blank unused 7-segment digits
+assign HEX0 = 7'b111_1111;
+assign HEX1 = 7'b111_1111;
+assign HEX2 = 7'b111_1111;
+assign HEX3 = 7'b111_1111;
+assign HEX4 = 7'b111_1111;
+assign HEX5 = 7'b111_1111;
+assign HEX6 = 7'b111_1111;
+assign HEX7 = 7'b111_1111;
+
+<span style="font-size: large;">endmodule</span></b></span></pre>
+<h3>
+<code><span style="font-family: Verdana, sans-serif; font-size: large;">LCD_Display.v</span></code></h3>
+<b><span style="font-family: Verdana, sans-serif;"><br></span></b>
+<br>
+<pre><span style="font-family: Verdana, sans-serif;"><b>/*
+ SW8 (GLOBAL RESET) resets LCD
+ENTITY LCD_Display IS
+-- Enter number of live Hex hardware data values to display
+-- (do not count ASCII character constants)
+    GENERIC(Num_Hex_Digits: Integer:= 2); 
+-----------------------------------------------------------------------
+-- LCD Displays 16 Characters on 2 lines
+-- LCD_display string is an ASCII character string entered in hex for 
+-- the two lines of the  LCD Display   (See ASCII to hex table below)
+-- Edit LCD_Display_String entries above to modify display
+-- Enter the ASCII character's 2 hex digit equivalent value
+-- (see table below for ASCII hex values)
+-- To display character assign ASCII value to LCD_display_string(x)
+-- To skip a character use 8'h20" (ASCII space)
+-- To dislay "live" hex values from hardware on LCD use the following: 
+--   make array element for that character location 8'h0" &amp; 4-bit field from Hex_Display_Data
+--   state machine sees 8'h0" in high 4-bits &amp; grabs the next lower 4-bits from Hex_Display_Data input
+--   and performs 4-bit binary to ASCII conversion needed to print a hex digit
+--   Num_Hex_Digits must be set to the count of hex data characters (ie. "00"s) in the display
+--   Connect hardware bits to display to Hex_Display_Data input
+-- To display less than 32 characters, terminate string with an entry of 8'hFE"
+--  (fewer characters may slightly increase the LCD's data update rate)
+------------------------------------------------------------------- 
+--                        ASCII HEX TABLE
+--  Hex                        Low Hex Digit
+-- Value  0   1   2   3   4   5   6   7   8   9   A   B   C   D   E   F
+------\----------------------------------------------------------------
+--H  2 |  SP  !   "   #   $   %   &amp;   '   (   )   *   +   ,   -   .   /
+--i  3 |  0   1   2   3   4   5   6   7   8   9   :   ;   &lt;   =   &gt;   ?
+--g  4 |  @   A   B   C   D   E   F   G   H   I   J   K   L   M   N   O
+--h  5 |  P   Q   R   S   T   U   V   W   X   Y   Z   [   \   ]   ^   _
+--   6 |  `   a   b   c   d   e   f   g   h   i   j   k   l   m   n   o
+--   7 |  p   q   r   s   t   u   v   w   x   y   z   {   |   }   ~ DEL
+-----------------------------------------------------------------------
+-- Example "A" is row 4 column 1, so hex value is 8'h41"
+-- *see LCD Controller's Datasheet for other graphics characters available
+*/
+        
+<span style="font-size: large;">module LCD_Display</span>(iCLK_50MHZ, iRST_N, hex1, hex0, 
+    LCD_RS,LCD_E,LCD_RW,DATA_BUS);
+input iCLK_50MHZ, iRST_N;
+input [3:0] hex1, hex0;
+output LCD_RS, LCD_E, LCD_RW;
+inout [7:0] DATA_BUS;
+
+parameter
+HOLD = 4'h0,
+FUNC_SET = 4'h1,
+DISPLAY_ON = 4'h2,
+MODE_SET = 4'h3,
+Print_String = 4'h4,
+LINE2 = 4'h5,
+RETURN_HOME = 4'h6,
+DROP_LCD_E = 4'h7,
+RESET1 = 4'h8,
+RESET2 = 4'h9,
+RESET3 = 4'ha,
+DISPLAY_OFF = 4'hb,
+DISPLAY_CLEAR = 4'hc;
+
+reg [3:0] state, next_command;
+// Enter new ASCII hex data above for LCD Display
+reg [7:0] DATA_BUS_VALUE;
+wire [7:0] Next_Char;
+reg [19:0] CLK_COUNT_400HZ;
+reg [4:0] CHAR_COUNT;
+reg CLK_400HZ, LCD_RW_INT, LCD_E, LCD_RS;
+
+// BIDIRECTIONAL TRI STATE LCD DATA BUS
+assign DATA_BUS = (LCD_RW_INT? 8'bZZZZZZZZ: DATA_BUS_VALUE);
+
+LCD_display_string u1(
+.index(CHAR_COUNT),
+.out(Next_Char),
+.hex1(hex1),
+.hex0(hex0));
+
+assign LCD_RW = LCD_RW_INT;
+
+always @(posedge iCLK_50MHZ or negedge iRST_N)
+    if (!iRST_N)
+    begin
+       CLK_COUNT_400HZ &lt;= 20'h00000;
+       CLK_400HZ &lt;= 1'b0;
+    end
+    else if (CLK_COUNT_400HZ &lt; 20'h0F424)
+    begin
+       CLK_COUNT_400HZ &lt;= CLK_COUNT_400HZ + 1'b1;
+    end
+    else
+    begin
+      CLK_COUNT_400HZ &lt;= 20'h00000;
+      CLK_400HZ &lt;= ~CLK_400HZ;
+    end
+// State Machine to send commands and data to LCD DISPLAY
+
+always @(posedge CLK_400HZ or negedge iRST_N)
+    if (!iRST_N)
+    begin
+     state &lt;= RESET1;
+    end
+    else
+ <span style="color: red; font-size: large;">   case (state)</span>
+<span style="font-size: large;">    RESET1:   </span>         
+// Set Function to 8-bit transfer and 2 line display with 5x8 Font size
+// see Hitachi HD44780 family data sheet for LCD command and timing details
+    begin
+      LCD_E &lt;= 1'b1;
+      LCD_RS &lt;= 1'b0;
+      LCD_RW_INT &lt;= 1'b0;
+      DATA_BUS_VALUE &lt;= 8'h38;
+      state &lt;= DROP_LCD_E;
+      next_command &lt;= RESET2;
+      CHAR_COUNT &lt;= 5'b00000;
+    end
+  <span style="font-size: large;">  RESET2:</span>
+    begin
+      LCD_E &lt;= 1'b1;
+      LCD_RS &lt;= 1'b0;
+      LCD_RW_INT &lt;= 1'b0;
+      DATA_BUS_VALUE &lt;= 8'h38;
+      state &lt;= DROP_LCD_E;
+      next_command &lt;= RESET3;
+    end
+  <span style="font-size: large;">  RESET3:</span>
+    begin
+      LCD_E &lt;= 1'b1;
+      LCD_RS &lt;= 1'b0;
+      LCD_RW_INT &lt;= 1'b0;
+      DATA_BUS_VALUE &lt;= 8'h38;
+      state &lt;= DROP_LCD_E;
+      next_command &lt;= FUNC_SET;
+    end
+<span style="font-size: large;">// EXTRA STATES ABOVE ARE NEEDED FOR RELIABLE PUSHBUTTON RESET OF LCD
+
+    FUNC_SET:</span>
+    begin
+      LCD_E &lt;= 1'b1;
+      LCD_RS &lt;= 1'b0;
+      LCD_RW_INT &lt;= 1'b0;
+      DATA_BUS_VALUE &lt;= 8'h38;
+      state &lt;= DROP_LCD_E;
+      next_command &lt;= DISPLAY_OFF;
+    end
+<span style="font-size: large;">
+// Turn off Display and Turn off cursor
+    DISPLAY_OFF:</span>
+    begin
+      LCD_E &lt;= 1'b1;
+      LCD_RS &lt;= 1'b0;
+      LCD_RW_INT &lt;= 1'b0;
+      DATA_BUS_VALUE &lt;= 8'h08;
+      state &lt;= DROP_LCD_E;
+      next_command &lt;= DISPLAY_CLEAR;
+    end
+<span style="font-size: large;">
+// Clear Display and Turn off cursor
+    DISPLAY_CLEAR:</span>
+    begin
+      LCD_E &lt;= 1'b1;
+      LCD_RS &lt;= 1'b0;
+      LCD_RW_INT &lt;= 1'b0;
+      DATA_BUS_VALUE &lt;= 8'h01;
+      state &lt;= DROP_LCD_E;
+      next_command &lt;= DISPLAY_ON;
+    end
+<span style="font-size: large;">
+// Turn on Display and Turn off cursor
+    DISPLAY_ON:</span>
+    begin
+      LCD_E &lt;= 1'b1;
+      LCD_RS &lt;= 1'b0;
+      LCD_RW_INT &lt;= 1'b0;
+      DATA_BUS_VALUE &lt;= 8'h0C;
+      state &lt;= DROP_LCD_E;
+      next_command &lt;= MODE_SET;
+    end
+
+<span style="font-size: large;">// Set write mode to auto increment address and move cursor to the right
+    MODE_SET:</span>
+    begin
+      LCD_E &lt;= 1'b1;
+      LCD_RS &lt;= 1'b0;
+      LCD_RW_INT &lt;= 1'b0;
+      DATA_BUS_VALUE &lt;= 8'h06;
+      state &lt;= DROP_LCD_E;
+      next_command &lt;= Print_String;
+    end
+
+<span style="font-size: large;">// Write ASCII hex character in first LCD character location
+    Print_String:</span>
+    begin
+      state &lt;= DROP_LCD_E;
+      LCD_E &lt;= 1'b1;
+      LCD_RS &lt;= 1'b1;
+      LCD_RW_INT &lt;= 1'b0;
+    // ASCII character to output
+      if (Next_Char[7:4] != 4'h0)
+        DATA_BUS_VALUE &lt;= Next_Char;
+        // Convert 4-bit value to an ASCII hex digit
+      else if (Next_Char[3:0] &gt;9)
+        // ASCII A...F
+         DATA_BUS_VALUE &lt;= {4'h4,Next_Char[3:0]-4'h9};
+      else
+        // ASCII 0...9
+         DATA_BUS_VALUE &lt;= {4'h3,Next_Char[3:0]};
+    // Loop to send out 32 characters to LCD Display  (16 by 2 lines)
+      if ((CHAR_COUNT &lt; 31) &amp;&amp; (Next_Char != 8'hFE))
+         CHAR_COUNT &lt;= CHAR_COUNT + 1'b1;
+      else
+         CHAR_COUNT &lt;= 5'b00000; 
+    // Jump to second line?
+      if (CHAR_COUNT == 15)
+        next_command &lt;= LINE2;
+    // Return to first line?
+      else if ((CHAR_COUNT == 31) || (Next_Char == 8'hFE))
+        next_command &lt;= RETURN_HOME;
+      else
+        next_command &lt;= Print_String;
+    end
+
+<span style="color: red;">// Set write address to line 2 character 1
+    LINE2:</span>
+    begin
+      LCD_E &lt;= 1'b1;
+      LCD_RS &lt;= 1'b0;
+      LCD_RW_INT &lt;= 1'b0;
+      DATA_BUS_VALUE &lt;= 8'hC0;
+      state &lt;= DROP_LCD_E;
+      next_command &lt;= Print_String;
+    end
+
+<span style="font-size: large;">// Return write address to first character postion on line 1
+    RETURN_HOME:</span>
+    begin
+      LCD_E &lt;= 1'b1;
+      LCD_RS &lt;= 1'b0;
+      LCD_RW_INT &lt;= 1'b0;
+      DATA_BUS_VALUE &lt;= 8'h80;
+      state &lt;= DROP_LCD_E;
+      next_command &lt;= Print_String;
+    end
+<span style="font-size: large;">
+// The next three states occur at the end of each command or data transfer to the LCD
+// Drop LCD E line - falling edge loads inst/data to LCD controller
+    DROP_LCD_E:</span>
+    begin
+      LCD_E &lt;= 1'b0;
+      state &lt;= HOLD;
+    end
+// Hold LCD inst/data valid after falling edge of E line                
+    HOLD:
+    begin
+      state &lt;= next_command;
+    end
+    endcase
+<span style="font-size: large;">endmodule
+
+module LCD_display_string</span>(index,out,hex0,hex1);
+input [4:0] index;
+input [3:0] hex0,hex1;
+output [7:0] out;
+reg [7:0] out;
+// ASCII hex values for LCD Display
+// Enter Live Hex Data Values from hardware here
+// LCD DISPLAYS THE FOLLOWING:
+//----------------------------
+//| Count=XX                  |
+//| DE2                       |
+//----------------------------
+// Line 1
+   always 
+     case (index)
+    5'h00: out &lt;= 8'h43;
+    5'h01: out &lt;= 8'h6F;
+    5'h02: out &lt;= 8'h75;
+    5'h03: out &lt;= 8'h6E;
+    5'h04: out &lt;= 8'h74;
+    5'h05: out &lt;= 8'h3D;
+    5'h06: out &lt;= {4'h0,hex1};
+    5'h07: out &lt;= {4'h0,hex0};
+// Line 2
+    5'h10: out &lt;= 8'h44;
+    5'h11: out &lt;= 8'h45;
+    5'h12: out &lt;= 8'h32;
+    default: out &lt;= 8'h20;
+     endcase
+<span style="font-size: large;">endmodule</span></b></span></pre>
+<h3>
+<code><span style="font-family: Verdana, sans-serif; font-size: large;">reset_delay.v</span></code></h3>
+<span style="font-size: large;"><b><span style="font-family: Verdana, sans-serif;"><br></span></b>
+<b><span style="font-family: Verdana, sans-serif;"><a href="https://www.blogger.com/null" name="lcdlab3.v"></a><a href="https://www.blogger.com/null" name="LCD_Display.v"></a><a href="https://www.blogger.com/null" name="reset_delay.v"></a><br></span></b>
+</span><br>
+<pre><span style="font-family: Verdana, sans-serif;"><b><span style="font-size: large;">module    Reset_Delay</span>(iCLK,oRESET);
+input        iCLK;
+output reg    oRESET;
+reg    [19:0]    Cont;
+
+always@(posedge iCLK)
+begin
+    if(Cont!=20'hFFFFF)
+    begin
+        Cont    &lt;=    Cont+1'b1;
+        oRESET    &lt;=    1'b0;
+    end
+    else
+    oRESET    &lt;=    1'b1;
+end
+<span style="font-size: large;">
+endmodule</span></b></span></pre>
+<div style="clear: both;"></div>
+</div>
+<div class="post-footer">
+<div class="post-footer-line post-footer-line-1"><span class="post-author vcard">
+張貼者：
+<span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+<meta content="https://www.blogger.com/profile/06410520834323738012" itemprop="url">
+<a class="g-profile" href="https://www.blogger.com/profile/06410520834323738012" rel="author" title="author profile" data-gapiscan="true" data-onload="true" data-gapiattached="true">
+<span itemprop="name">alex9ufo</span>
+</a>
+</span>
+</span>
+<span class="post-timestamp">
+於
+<meta content="http://alex9ufoexploer.blogspot.com/2014/05/displays-value-of-sw70-as-two-digits-in.html" itemprop="url">
+<a class="timestamp-link" href="http://alex9ufoexploer.blogspot.com/2014/05/displays-value-of-sw70-as-two-digits-in.html" rel="bookmark" title="permanent link"><abbr class="published" itemprop="datePublished" title="2014-05-22T06:48:00-07:00">上午6:48</abbr></a>
+</span>
+<span class="post-comment-link">
+</span>
+<span class="post-icons">
+<span class="item-control blog-admin pid-403799744">
+<a href="https://www.blogger.com/post-edit.g?blogID=2769060068368517893&amp;postID=8265535189684909515&amp;from=pencil" title="編輯文章">
+<img alt="" class="icon-action" height="18" src="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/icon18_edit_allbkg.gif" width="18">
+</a>
+</span>
+</span>
+<div class="post-share-buttons goog-inline-block">
+<a class="goog-inline-block share-button sb-email" href="https://www.blogger.com/share-post.g?blogID=2769060068368517893&amp;postID=8265535189684909515&amp;target=email" target="_blank" title="以電子郵件傳送這篇文章"><span class="share-button-link-text">以電子郵件傳送這篇文章</span></a><a class="goog-inline-block share-button sb-blog" href="https://www.blogger.com/share-post.g?blogID=2769060068368517893&amp;postID=8265535189684909515&amp;target=blog" onclick="window.open(this.href, &quot;_blank&quot;, &quot;height=270,width=475&quot;); return false;" target="_blank" title="BlogThis！"><span class="share-button-link-text">BlogThis！</span></a><a class="goog-inline-block share-button sb-twitter" href="https://www.blogger.com/share-post.g?blogID=2769060068368517893&amp;postID=8265535189684909515&amp;target=twitter" target="_blank" title="分享至 Twitter"><span class="share-button-link-text">分享至 Twitter</span></a><a class="goog-inline-block share-button sb-facebook" href="https://www.blogger.com/share-post.g?blogID=2769060068368517893&amp;postID=8265535189684909515&amp;target=facebook" onclick="window.open(this.href, &quot;_blank&quot;, &quot;height=430,width=640&quot;); return false;" target="_blank" title="分享至 Facebook"><span class="share-button-link-text">分享至 Facebook</span></a><a class="goog-inline-block share-button sb-pinterest" href="https://www.blogger.com/share-post.g?blogID=2769060068368517893&amp;postID=8265535189684909515&amp;target=pinterest" target="_blank" title="分享到 Pinterest"><span class="share-button-link-text">分享到 Pinterest</span></a>
+</div>
+</div>
+<div class="post-footer-line post-footer-line-2"><span class="post-labels">
+標籤：
+<a href="http://alex9ufoexploer.blogspot.com/search/label/DE2-70%20FPGA" rel="tag">DE2-70 FPGA</a>
+</span>
+</div>
+<div class="post-footer-line post-footer-line-3"><span class="post-location">
+</span>
+</div>
+</div>
+</div>
+<div class="comments" id="comments">
+<a name="comments"></a>
+<h4>沒有留言:</h4>
+<div id="Blog1_comments-block-wrapper">
+<dl class="avatar-comment-indent" id="comments-block">
+</dl>
+</div>
+<p class="comment-footer">
+</p><div class="comment-form">
+<a name="comment-form"></a>
+<h4 id="comment-post-message">張貼留言</h4>
+<p>
+</p>
+<a href="https://www.blogger.com/comment-iframe.g?blogID=2769060068368517893&amp;postID=8265535189684909515&amp;blogspotRpcToken=6027708" id="comment-editor-src"></a>
+<iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" frameborder="0" height="194px" id="comment-editor" name="comment-editor" src="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/comment-iframe.html" width="100%" data-resized="true"></iframe>
+<script src="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/1646370754-comment_from_post_iframe.js.下载" type="text/javascript"></script>
+<script type="text/javascript">
+      BLOG_CMT_createIframe('https://www.blogger.com/rpc_relay.html');
+    </script>
+</div>
+<p></p>
+<div id="backlinks-container">
+<div id="Blog1_backlinks-container">
+</div>
+</div>
+</div>
+</div>
+
+        </div></div>
+      
+</div>
+<div class="blog-pager" id="blog-pager">
+<span id="blog-pager-newer-link">
+<a class="blog-pager-newer-link" href="http://alex9ufoexploer.blogspot.com/2014/05/lcd-16x2-write-timing-verilog.html" id="Blog1_blog-pager-newer-link" title="較新的文章">較新的文章</a>
+</span>
+<span id="blog-pager-older-link">
+<a class="blog-pager-older-link" href="http://alex9ufoexploer.blogspot.com/2014/05/sequential-example-de2-70.html" id="Blog1_blog-pager-older-link" title="較舊的文章">較舊的文章</a>
+</span>
+<a class="home-link" href="http://alex9ufoexploer.blogspot.com/">首頁</a>
+</div>
+<div class="clear"></div>
+<div class="post-feeds">
+<div class="feed-links">
+訂閱：
+<a class="feed-link" href="http://alex9ufoexploer.blogspot.com/feeds/8265535189684909515/comments/default" target="_blank" type="application/atom+xml">張貼留言 (Atom)</a>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="column-left-outer">
+<div class="column-left-inner">
+<aside>
+</aside>
+</div>
+</div>
+<div class="column-right-outer">
+<div class="column-right-inner">
+<aside>
+<div class="sidebar section" id="sidebar-right-1"><div class="widget Label" data-version="1" id="Label1">
+<h2>標籤</h2>
+<div class="widget-content list-label-widget-content">
+<ul>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/%5BJavaScript%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80%20%E6%95%B8%E5%80%BC%E5%88%86%E6%9E%90%5D">[JavaScript程式語言 數值分析]</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/2017%20%E5%8B%A4%E7%9B%8A%E7%A7%91%E5%A4%A7">2017 勤益科大</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/2018%20%E5%8B%A4%E7%9B%8A%E7%A7%91%E5%A4%A7%20%E5%8D%94%E5%90%8C%E6%95%99%E5%AD%B8">2018 勤益科大 協同教學</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/2018%20%E5%8B%A4%E7%9B%8A%E7%A7%91%E5%A4%A7%20RFID%E6%87%89%E7%94%A8">2018 勤益科大 RFID應用</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/2019%E5%8B%A4%E7%9B%8A%E7%A7%91%E5%A4%A7%20%E5%8D%94%E5%90%8C%E6%95%99%E5%AD%B8">2019勤益科大 協同教學</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/2019%E5%8B%A4%E7%9B%8A%E6%95%B8%E5%80%BC%E5%88%86%E6%9E%90Python%E5%AF%AB%E6%B3%95">2019勤益數值分析Python寫法</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/%E5%B7%A5%E6%A5%AD%E9%9B%BB%E5%AD%90%20%E4%B8%99%E7%B4%9A%E6%AA%A2%E5%AE%9A">工業電子 丙級檢定</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/%E5%9F%BA%E9%9B%BB%E5%AF%A6%E7%BF%92">基電實習</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/%E8%A1%93%E7%A7%91%E7%AD%86%E8%A9%A6">術科筆試</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/%E5%BE%AE%E9%9B%BB%E5%AD%90%E5%AD%B8">微電子學</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/%E9%9B%BB%E8%85%A6%E7%B9%AA%E5%9C%96%28%E9%9B%BB%E8%B7%AF%E7%B9%AA%E5%9C%96%29Protel99SE">電腦繪圖(電路繪圖)Protel99SE</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/%E6%95%B8%E4%BD%8D%E9%82%8F%E8%BC%AF">數位邏輯</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/%E6%95%B8%E5%80%BC%E5%88%86%E6%9E%90">數值分析</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Arduino">Arduino</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Arduino%E5%8B%A4%E7%9B%8A">Arduino勤益</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/%EF%BC%A2luetooth">Ｂluetooth</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Blynk">Blynk</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/C%2B%2B%E6%95%B8%E5%80%BC%E5%88%86%E6%9E%90">C++數值分析</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/DE2-70%20FPGA">DE2-70 FPGA</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Electron.js">Electron.js</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/ESP32">ESP32</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/ESP8266">ESP8266</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/ESP8266%20%20SNMP">ESP8266  SNMP</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Google%20FireBase">Google FireBase</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/HC05">HC05</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/IFTTT%20%26%20%20IOT%20ESP8266">IFTTT &amp;  IOT ESP8266</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/IOT%208266">IOT 8266</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/IOT%20COAP%E5%8D%94%E5%AE%9A">IOT COAP協定</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/JAVA%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80">JAVA程式語言</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/JAVA%E8%AA%9E%E8%A8%80%E6%95%B8%E5%80%BC%E5%88%86%E6%9E%90">JAVA語言數值分析</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/JavaScript%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80">JavaScript程式語言</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Julia%20%E6%95%B8%E5%80%BC%E5%88%86%E6%9E%90">Julia 數值分析</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Julia%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80">Julia程式語言</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Juliua%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80">Juliua程式語言</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Julua%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80">Julua程式語言</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Kotlin%20%E9%AB%98%E4%B8%AD%E7%A8%8B%E5%BC%8F%E7%B7%B4%E7%BF%92%E9%A1%8C">Kotlin 高中程式練習題</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/kotlin%20%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98">kotlin 語言學習筆記</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/LiveCode">LiveCode</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/MicroPython%20ESP8266">MicroPython ESP8266</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/MIT%20APP2">MIT APP2</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/MongoDB">MongoDB</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/MQTT">MQTT</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/MyESP8266%20IOT">MyESP8266 IOT</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Node%20RED">Node RED</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Node.js">Node.js</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/NodeMCU">NodeMCU</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/osoyoo%20%20ESP8266%20IOT">osoyoo  ESP8266 IOT</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Python">Python</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Python%20100%E5%A4%A9">Python 100天</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/python%20%E7%A8%8B%E5%BC%8F%E9%9B%86%E8%A8%93">python 程式集訓</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Python%20APCS%E9%AB%98%E4%B8%AD%E7%94%9F%E7%A8%8B%E5%BC%8F%E8%A7%A3%E9%A1%8C">Python APCS高中生程式解題</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Python%20Exercise">Python Exercise</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Python%20Matplotlib">Python Matplotlib</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/R%E8%AA%9E%E8%A8%80">R語言</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/STM32">STM32</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/TKinter">TKinter</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/u%27P">u'P</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/VB2010">VB2010</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/VHDL">VHDL</a>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=2769060068368517893&amp;widgetType=Label&amp;widgetId=Label1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;Label1&quot;));" rel="nofollow" target="configLabel1" title="編輯">
+<img alt="" height="18" src="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget Label" data-version="1" id="Label3">
+<h2>分類</h2>
+<div class="widget-content list-label-widget-content">
+<ul>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/%5BJavaScript%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80%20%E6%95%B8%E5%80%BC%E5%88%86%E6%9E%90%5D">[JavaScript程式語言 數值分析]</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/2017%20%E5%8B%A4%E7%9B%8A%E7%A7%91%E5%A4%A7">2017 勤益科大</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/2018%20%E5%8B%A4%E7%9B%8A%E7%A7%91%E5%A4%A7%20%E5%8D%94%E5%90%8C%E6%95%99%E5%AD%B8">2018 勤益科大 協同教學</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/2018%20%E5%8B%A4%E7%9B%8A%E7%A7%91%E5%A4%A7%20RFID%E6%87%89%E7%94%A8">2018 勤益科大 RFID應用</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/2019%E5%8B%A4%E7%9B%8A%E7%A7%91%E5%A4%A7%20%E5%8D%94%E5%90%8C%E6%95%99%E5%AD%B8">2019勤益科大 協同教學</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/2019%E5%8B%A4%E7%9B%8A%E6%95%B8%E5%80%BC%E5%88%86%E6%9E%90Python%E5%AF%AB%E6%B3%95">2019勤益數值分析Python寫法</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/%E5%B7%A5%E6%A5%AD%E9%9B%BB%E5%AD%90%20%E4%B8%99%E7%B4%9A%E6%AA%A2%E5%AE%9A">工業電子 丙級檢定</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/%E5%9F%BA%E9%9B%BB%E5%AF%A6%E7%BF%92">基電實習</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/%E8%A1%93%E7%A7%91%E7%AD%86%E8%A9%A6">術科筆試</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/%E5%BE%AE%E9%9B%BB%E5%AD%90%E5%AD%B8">微電子學</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/%E9%9B%BB%E8%85%A6%E7%B9%AA%E5%9C%96%28%E9%9B%BB%E8%B7%AF%E7%B9%AA%E5%9C%96%29Protel99SE">電腦繪圖(電路繪圖)Protel99SE</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/%E6%95%B8%E4%BD%8D%E9%82%8F%E8%BC%AF">數位邏輯</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/%E6%95%B8%E5%80%BC%E5%88%86%E6%9E%90">數值分析</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Arduino">Arduino</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Arduino%E5%8B%A4%E7%9B%8A">Arduino勤益</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/%EF%BC%A2luetooth">Ｂluetooth</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Blynk">Blynk</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/C%2B%2B%E6%95%B8%E5%80%BC%E5%88%86%E6%9E%90">C++數值分析</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/DE2-70%20FPGA">DE2-70 FPGA</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Electron.js">Electron.js</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/ESP32">ESP32</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/ESP8266">ESP8266</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/ESP8266%20%20SNMP">ESP8266  SNMP</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Google%20FireBase">Google FireBase</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/HC05">HC05</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/IFTTT%20%26%20%20IOT%20ESP8266">IFTTT &amp;  IOT ESP8266</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/IOT%208266">IOT 8266</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/IOT%20COAP%E5%8D%94%E5%AE%9A">IOT COAP協定</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/JAVA%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80">JAVA程式語言</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/JAVA%E8%AA%9E%E8%A8%80%E6%95%B8%E5%80%BC%E5%88%86%E6%9E%90">JAVA語言數值分析</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/JavaScript%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80">JavaScript程式語言</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Julia%20%E6%95%B8%E5%80%BC%E5%88%86%E6%9E%90">Julia 數值分析</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Julia%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80">Julia程式語言</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Juliua%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80">Juliua程式語言</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Julua%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80">Julua程式語言</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Kotlin%20%E9%AB%98%E4%B8%AD%E7%A8%8B%E5%BC%8F%E7%B7%B4%E7%BF%92%E9%A1%8C">Kotlin 高中程式練習題</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/kotlin%20%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98">kotlin 語言學習筆記</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/LiveCode">LiveCode</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/MicroPython%20ESP8266">MicroPython ESP8266</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/MIT%20APP2">MIT APP2</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/MongoDB">MongoDB</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/MQTT">MQTT</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/MyESP8266%20IOT">MyESP8266 IOT</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Node%20RED">Node RED</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Node.js">Node.js</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/NodeMCU">NodeMCU</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/osoyoo%20%20ESP8266%20IOT">osoyoo  ESP8266 IOT</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Python">Python</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Python%20100%E5%A4%A9">Python 100天</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/python%20%E7%A8%8B%E5%BC%8F%E9%9B%86%E8%A8%93">python 程式集訓</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Python%20APCS%E9%AB%98%E4%B8%AD%E7%94%9F%E7%A8%8B%E5%BC%8F%E8%A7%A3%E9%A1%8C">Python APCS高中生程式解題</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Python%20Exercise">Python Exercise</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/Python%20Matplotlib">Python Matplotlib</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/R%E8%AA%9E%E8%A8%80">R語言</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/STM32">STM32</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/TKinter">TKinter</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/u%27P">u'P</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/VB2010">VB2010</a>
+</li>
+<li>
+<a dir="ltr" href="http://alex9ufoexploer.blogspot.com/search/label/VHDL">VHDL</a>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=2769060068368517893&amp;widgetType=Label&amp;widgetId=Label3&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;Label3&quot;));" rel="nofollow" target="configLabel3" title="編輯">
+<img alt="" height="18" src="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+<table border="0" cellpadding="0" cellspacing="0" class="section-columns columns-2">
+<tbody>
+<tr>
+<td class="first columns-cell">
+<div class="sidebar section" id="sidebar-right-2-1"><div class="widget BlogArchive" data-version="1" id="BlogArchive1">
+<h2>網誌存檔</h2>
+<div class="widget-content">
+<div id="ArchiveList">
+<div id="BlogArchive1_ArchiveList">
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2019/">
+2019
+</a>
+<span class="post-count" dir="ltr">(510)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2019/06/">
+六月
+</a>
+<span class="post-count" dir="ltr">(20)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2019/05/">
+五月
+</a>
+<span class="post-count" dir="ltr">(87)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2019/04/">
+四月
+</a>
+<span class="post-count" dir="ltr">(101)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2019/03/">
+三月
+</a>
+<span class="post-count" dir="ltr">(52)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2019/02/">
+二月
+</a>
+<span class="post-count" dir="ltr">(111)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2019/01/">
+一月
+</a>
+<span class="post-count" dir="ltr">(139)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2018/">
+2018
+</a>
+<span class="post-count" dir="ltr">(462)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2018/12/">
+十二月
+</a>
+<span class="post-count" dir="ltr">(91)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2018/11/">
+十一月
+</a>
+<span class="post-count" dir="ltr">(22)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2018/10/">
+十月
+</a>
+<span class="post-count" dir="ltr">(7)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2018/09/">
+九月
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2018/08/">
+八月
+</a>
+<span class="post-count" dir="ltr">(13)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2018/07/">
+七月
+</a>
+<span class="post-count" dir="ltr">(5)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2018/06/">
+六月
+</a>
+<span class="post-count" dir="ltr">(15)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2018/05/">
+五月
+</a>
+<span class="post-count" dir="ltr">(22)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2018/04/">
+四月
+</a>
+<span class="post-count" dir="ltr">(28)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2018/03/">
+三月
+</a>
+<span class="post-count" dir="ltr">(10)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2018/02/">
+二月
+</a>
+<span class="post-count" dir="ltr">(25)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2018/01/">
+一月
+</a>
+<span class="post-count" dir="ltr">(223)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2017/">
+2017
+</a>
+<span class="post-count" dir="ltr">(422)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2017/12/">
+十二月
+</a>
+<span class="post-count" dir="ltr">(175)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2017/11/">
+十一月
+</a>
+<span class="post-count" dir="ltr">(53)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2017/10/">
+十月
+</a>
+<span class="post-count" dir="ltr">(85)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2017/09/">
+九月
+</a>
+<span class="post-count" dir="ltr">(30)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2017/08/">
+八月
+</a>
+<span class="post-count" dir="ltr">(10)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2017/06/">
+六月
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2017/03/">
+三月
+</a>
+<span class="post-count" dir="ltr">(28)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2017/02/">
+二月
+</a>
+<span class="post-count" dir="ltr">(15)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2017/01/">
+一月
+</a>
+<span class="post-count" dir="ltr">(25)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2016/">
+2016
+</a>
+<span class="post-count" dir="ltr">(140)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2016/12/">
+十二月
+</a>
+<span class="post-count" dir="ltr">(12)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2016/09/">
+九月
+</a>
+<span class="post-count" dir="ltr">(54)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2016/08/">
+八月
+</a>
+<span class="post-count" dir="ltr">(26)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2016/06/">
+六月
+</a>
+<span class="post-count" dir="ltr">(4)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2016/05/">
+五月
+</a>
+<span class="post-count" dir="ltr">(8)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2016/04/">
+四月
+</a>
+<span class="post-count" dir="ltr">(18)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2016/03/">
+三月
+</a>
+<span class="post-count" dir="ltr">(17)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2016/01/">
+一月
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2015/">
+2015
+</a>
+<span class="post-count" dir="ltr">(101)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2015/11/">
+十一月
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2015/10/">
+十月
+</a>
+<span class="post-count" dir="ltr">(33)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2015/09/">
+九月
+</a>
+<span class="post-count" dir="ltr">(28)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2015/07/">
+七月
+</a>
+<span class="post-count" dir="ltr">(14)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2015/06/">
+六月
+</a>
+<span class="post-count" dir="ltr">(4)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2015/01/">
+一月
+</a>
+<span class="post-count" dir="ltr">(20)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">
+
+        ▼&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2014/">
+2014
+</a>
+<span class="post-count" dir="ltr">(212)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2014/12/">
+十二月
+</a>
+<span class="post-count" dir="ltr">(5)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2014/11/">
+十一月
+</a>
+<span class="post-count" dir="ltr">(42)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2014/10/">
+十月
+</a>
+<span class="post-count" dir="ltr">(7)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2014/09/">
+九月
+</a>
+<span class="post-count" dir="ltr">(6)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2014/08/">
+八月
+</a>
+<span class="post-count" dir="ltr">(7)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2014/07/">
+七月
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2014/06/">
+六月
+</a>
+<span class="post-count" dir="ltr">(83)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">
+
+        ▼&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2014/05/">
+五月
+</a>
+<span class="post-count" dir="ltr">(33)</span>
+<ul class="posts">
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/quartus-ii-91de2-2.html">Quartus II 9.1和DE2基本使用方法----入門(2)  多工器的設計與模擬</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/quartus-ii-91de2_6554.html">Quartus II 9.1和DE2基本使用方法----入門(1)</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/fpga66.html">FPGA系統設計實務(6/6)</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/fpga56.html">FPGA系統設計實務(5/6)</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/2014-05-26-chapter-9-feedback-amplifier.html">2014-05-26   Chapter #9: FeedBack Amplifier 回授放大器</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/28.html">2.8.傅立葉分析</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/fft.html">FFT 結果的物理意義</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/blog-post_2596.html">可控流水燈設計（通過按鍵實現啟動/停止控制）</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/blog-post_24.html">多功能流水燈設計（單鍵實現多種流水模式切換，並用數碼管顯示模式值）</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/verilog_24.html">用Verilog 描述七段顯示器</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/verilog.html">Verilog  計數器</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/50mhz-1hz.html">50MHZ 時鐘脈波除頻轉成1Hz標準脈波</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/16led-de2-70.html">16LED 跑馬燈---適用於DE2-70</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/lcd-16x2-write-timing-verilog.html">LCD 16x2 Write Timing ---Verilog</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/displays-value-of-sw70-as-two-digits-in.html">顯示 SW[7:0] 2個位數在LCD上---適用於DE2-70</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/sequential-example-de2-70.html">Sequential Example 計數器 ---適用於DE2-70</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/httpdic.html">Verilog</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/4bit-4channel-de2-70_21.html">4bit 4channel 解多工暫存器 ---適用於DE2-70</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/4bit-4channel-de2-70.html">4bit 4channel 多工暫存器 ---適用於DE2-70</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/000-235959_21.html">非同步式計時器, 產生 0:0:0 ~ 23:59:59 計時器</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/000-235959.html">計時器, 產生 0:0:0 ~ 23:59:59 計時值</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/sw118-sw74-sw30-ledg0000-de2-70.html">當計數值到達 SW[11:8] SW[7:4] SW[3:0] 時計數值回到000  (DE2-70...</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/blog-post.html">BCD_adder (1digit)</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/2014-05-19-chapter-9-feedback-amplifier.html">2014-05-19   Chapter #9: FeedBack Amplifier 回授放大器</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2012/11/digital-electronics-ee101-2006-2007.html">Digital Electronics (EE101)   2006-2007</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/01/band-pass-filter-calculator-filter.html">Band Pass Filter Calculator</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/digital-labs-using-altera-de2-board.html">Digital Labs using the Altera DE2 Board</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/altera-de2-board-resources-for-students.html">Altera DE2 Board Resources for Students</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/fpga46.html">FPGA系統設計實務(4/6)</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/fpga36.html">FPGA系統設計實務(3/6)</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/2x1-mux-8-2x1-mux-27-de2-70.html">修改 2x1 MUX 成為8組 2x1 MUX 並送至2個7段顯示器上顯示結果 並下載到DE2-70...</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/2014-05-05-chapter-8frequency-response.html">2014-05-05   Chapter #8:Frequency Response 頻率響應</a></li>
+<li><a href="http://alex9ufoexploer.blogspot.com/2014/05/fpga26-36.html">FPGA系統設計實務(2/6)  (3/6)</a></li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2014/04/">
+四月
+</a>
+<span class="post-count" dir="ltr">(5)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2014/03/">
+三月
+</a>
+<span class="post-count" dir="ltr">(6)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2014/02/">
+二月
+</a>
+<span class="post-count" dir="ltr">(10)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2014/01/">
+一月
+</a>
+<span class="post-count" dir="ltr">(7)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2013/">
+2013
+</a>
+<span class="post-count" dir="ltr">(162)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2013/12/">
+十二月
+</a>
+<span class="post-count" dir="ltr">(29)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2013/11/">
+十一月
+</a>
+<span class="post-count" dir="ltr">(27)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2013/10/">
+十月
+</a>
+<span class="post-count" dir="ltr">(17)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2013/09/">
+九月
+</a>
+<span class="post-count" dir="ltr">(6)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2013/07/">
+七月
+</a>
+<span class="post-count" dir="ltr">(20)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2013/06/">
+六月
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2013/05/">
+五月
+</a>
+<span class="post-count" dir="ltr">(6)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2013/04/">
+四月
+</a>
+<span class="post-count" dir="ltr">(48)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2013/03/">
+三月
+</a>
+<span class="post-count" dir="ltr">(4)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2013/02/">
+二月
+</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2012/">
+2012
+</a>
+<span class="post-count" dir="ltr">(225)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2012/12/">
+十二月
+</a>
+<span class="post-count" dir="ltr">(24)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2012/11/">
+十一月
+</a>
+<span class="post-count" dir="ltr">(68)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2012/10/">
+十月
+</a>
+<span class="post-count" dir="ltr">(110)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2012/09/">
+九月
+</a>
+<span class="post-count" dir="ltr">(21)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://alex9ufoexploer.blogspot.com/2012/04/">
+四月
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=2769060068368517893&amp;widgetType=BlogArchive&amp;widgetId=BlogArchive1&amp;action=editWidget&amp;sectionId=sidebar-right-2-1" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;BlogArchive1&quot;));" rel="nofollow" target="configBlogArchive1" title="編輯">
+<img alt="" height="18" src="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+</td>
+<td class="columns-cell">
+<div class="sidebar section" id="sidebar-right-2-2"><div class="widget BlogSearch" data-version="1" id="BlogSearch1">
+<h2 class="title">搜尋此網誌</h2>
+<div class="widget-content">
+<div id="BlogSearch1_form">
+<form action="http://alex9ufoexploer.blogspot.com/search" class="gsc-search-box" target="_top">
+<table cellpadding="0" cellspacing="0" class="gsc-search-box">
+<tbody>
+<tr>
+<td class="gsc-input">
+<input autocomplete="off" class="gsc-input" name="q" size="10" title="search" type="text" value="">
+</td>
+<td class="gsc-search-button">
+<input class="gsc-search-button" title="search" type="submit" value="搜尋">
+</td>
+</tr>
+</tbody>
+</table>
+</form>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=2769060068368517893&amp;widgetType=BlogSearch&amp;widgetId=BlogSearch1&amp;action=editWidget&amp;sectionId=sidebar-right-2-2" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;BlogSearch1&quot;));" rel="nofollow" target="configBlogSearch1" title="編輯">
+<img alt="" height="18" src="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sidebar no-items section" id="sidebar-right-3"></div>
+</aside>
+</div>
+</div>
+</div>
+<div style="clear: both"></div>
+<!-- columns -->
+</div>
+<!-- main -->
+</div>
+</div>
+<div class="main-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<footer>
+<div class="footer-outer">
+<div class="footer-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left footer-fauxborder-left">
+<div class="fauxborder-right footer-fauxborder-right"></div>
+<div class="region-inner footer-inner">
+<div class="foot no-items section" id="footer-1"></div>
+<table border="0" cellpadding="0" cellspacing="0" class="section-columns columns-2">
+<tbody>
+<tr>
+<td class="first columns-cell">
+<div class="foot no-items section" id="footer-2-1"></div>
+</td>
+<td class="columns-cell">
+<div class="foot no-items section" id="footer-2-2"></div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- outside of the include in order to lock Attribution widget -->
+<div class="foot section" id="footer-3" name="頁尾"><div class="widget Attribution" data-version="1" id="Attribution1">
+<div class="widget-content" style="text-align: center;">
+技術提供：<a href="https://www.blogger.com/" target="_blank">Blogger</a>.
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=2769060068368517893&amp;widgetType=Attribution&amp;widgetId=Attribution1&amp;action=editWidget&amp;sectionId=footer-3" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;Attribution1&quot;));" rel="nofollow" target="configAttribution1" title="編輯">
+<img alt="" height="18" src="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/icon18_wrench_allbkg.png" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+</div>
+</div>
+<div class="footer-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</footer>
+<!-- content -->
+</div>
+</div>
+<div class="content-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    window.setTimeout(function() {
+        document.body.className = document.body.className.replace('loading', '');
+      }, 10);
+  </script>
+
+<script type="text/javascript" src="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/4078559275-widgets.js.下载"></script>
+<script type="text/javascript">
+window['__wavt'] = 'AOuZoY5lC8v13M6uxXIo_rVtEZcWeS3UvA:1561390268585';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d2769060068368517893','//alex9ufoexploer.blogspot.com/2014/05/displays-value-of-sw70-as-two-digits-in.html','2769060068368517893');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '2769060068368517893', 'title': 'alex9ufo  聰明人求知心切', 'url': 'http://alex9ufoexploer.blogspot.com/2014/05/displays-value-of-sw70-as-two-digits-in.html', 'canonicalUrl': 'http://alex9ufoexploer.blogspot.com/2014/05/displays-value-of-sw70-as-two-digits-in.html', 'homepageUrl': 'http://alex9ufoexploer.blogspot.com/', 'searchUrl': 'http://alex9ufoexploer.blogspot.com/search', 'canonicalHomepageUrl': 'http://alex9ufoexploer.blogspot.com/', 'blogspotFaviconUrl': 'http://alex9ufoexploer.blogspot.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'zh-TW', 'localeUnderscoreDelimited': 'zh_tw', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22alex9ufo  聰明人求知心切 - Atom\x22 href\x3d\x22http://alex9ufoexploer.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22alex9ufo  聰明人求知心切 - RSS\x22 href\x3d\x22http://alex9ufoexploer.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22alex9ufo  聰明人求知心切 - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/2769060068368517893/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22alex9ufo  聰明人求知心切 - Atom\x22 href\x3d\x22http://alex9ufoexploer.blogspot.com/feeds/8265535189684909515/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'ieCssRetrofitLinks': '\x3c!--[if IE]\x3e\x3cscript type\x3d\x22text/javascript\x22 src\x3d\x22https://www.blogger.com/static/v1/jsbin/3399642339-ieretrofit.js\x22\x3e\x3c/script\x3e\n\x3c![endif]--\x3e', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/af5963e5c1dc6f29', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'disableGComments': true, 'sharing': {'platforms': [{'name': '取得連結', 'key': 'link', 'shareMessage': '取得連結', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': '分享到 Facebook', 'target': 'facebook'}, {'name': 'BlogThis&#65281;', 'key': 'blogThis', 'shareMessage': 'BlogThis&#65281;', 'target': 'blog'}, {'name': 'Twitter', 'key': 'twitter', 'shareMessage': '分享到 Twitter', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': '分享到 Pinterest', 'target': 'pinterest'}, {'name': '以電子郵件傳送', 'key': 'email', 'shareMessage': '以電子郵件傳送', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 300, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27zh_TW\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': '閱讀完整內容', 'pageType': 'item', 'postId': '8265535189684909515', 'pageName': '顯示 SW[7:0] 2個位數在LCD上---適用於DE2-70', 'pageTitle': 'alex9ufo  聰明人求知心切: 顯示 SW[7:0] 2個位數在LCD上---適用於DE2-70'}}, {'name': 'features', 'data': {'sharing_get_link_dialog': 'true', 'sharing_native': 'false'}}, {'name': 'messages', 'data': {'edit': '編輯', 'linkCopiedToClipboard': '已將連結複製到剪貼簿&#65281;', 'ok': '確定', 'postLink': '文章連結'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': '自訂', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': '顯示 SW[7:0] 2個位數在LCD上---適用於DE2-70', 'description': 'displays the value of SW[7:0] as two digits in the LCD.  源自於  http://www.johnloomis.org/digitallab/lcdlab/lcdlab3/lcdlab3.qdoc.html     Veri...', 'url': 'http://alex9ufoexploer.blogspot.com/2014/05/displays-value-of-sw70-as-two-digits-in.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 8265535189684909515}}]);
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/1928452499-lbx__zh_tw.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/368954415-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'sidebar-right-1', document.getElementById('Label1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label3', 'sidebar-right-1', document.getElementById('Label3'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar-right-2-1', document.getElementById('BlogArchive1'), {'languageDirection': 'ltr', 'loadingMessage': '載入中\x26hellip;'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogSearchView', new _WidgetInfo('BlogSearch1', 'sidebar-right-2-2', document.getElementById('BlogSearch1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AttributionView', new _WidgetInfo('Attribution1', 'footer-3', document.getElementById('Attribution1'), {}, 'displayModeFull'));
+</script><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="./alex9ufo 聰明人求知心切_ 顯示 SW[7_0] 2個位數在LCD上---適用於DE2-70_files/translate_24dp.png" width="20" height="20" alt="Google 翻译"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">原文</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">提供更好的翻译建议</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div>
+
+<div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body></html>
