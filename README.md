@@ -1,0 +1,2 @@
+# lcd-driver-CFAH1602BTMCJP
+在DE2_70 FPGA上实现LCD驱动程序
