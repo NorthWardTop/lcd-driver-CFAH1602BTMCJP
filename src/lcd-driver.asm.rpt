@@ -1,5 +1,5 @@
 Assembler report for lcd-driver
-Mon Jun 24 22:50:15 2019
+Wed Jun 26 11:36:16 2019
 Quartus II Version 8.1 Build 163 10/28/2008 SJ Full Version
 
 
@@ -10,8 +10,8 @@ Quartus II Version 8.1 Build 163 10/28/2008 SJ Full Version
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/ATWN_Yhlee/Desktop/lcd-driver-CFAH1602BTMCJP/src/lcd-driver.sof
-  6. Assembler Device Options: C:/Users/ATWN_Yhlee/Desktop/lcd-driver-CFAH1602BTMCJP/src/lcd-driver.pof
+  5. Assembler Device Options: D:/lcd-driver-CFAH1602BTMCJP/src/lcd-driver.sof
+  6. Assembler Device Options: D:/lcd-driver-CFAH1602BTMCJP/src/lcd-driver.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Jun 24 22:50:15 2019 ;
+; Assembler Status      ; Successful - Wed Jun 26 11:36:16 2019 ;
 ; Revision Name         ; lcd-driver                            ;
 ; Top-level Entity Name ; lcd_driver                            ;
 ; Family                ; Cyclone II                            ;
@@ -76,37 +76,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+--------------------------------------------------------------------------+
-; Assembler Generated Files                                                ;
-+--------------------------------------------------------------------------+
-; File Name                                                                ;
-+--------------------------------------------------------------------------+
-; C:/Users/ATWN_Yhlee/Desktop/lcd-driver-CFAH1602BTMCJP/src/lcd-driver.sof ;
-; C:/Users/ATWN_Yhlee/Desktop/lcd-driver-CFAH1602BTMCJP/src/lcd-driver.pof ;
-+--------------------------------------------------------------------------+
++-------------------------------------------------+
+; Assembler Generated Files                       ;
++-------------------------------------------------+
+; File Name                                       ;
++-------------------------------------------------+
+; D:/lcd-driver-CFAH1602BTMCJP/src/lcd-driver.sof ;
+; D:/lcd-driver-CFAH1602BTMCJP/src/lcd-driver.pof ;
++-------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/ATWN_Yhlee/Desktop/lcd-driver-CFAH1602BTMCJP/src/lcd-driver.sof ;
-+----------------+-----------------------------------------------------------------------------------+
-; Option         ; Setting                                                                           ;
-+----------------+-----------------------------------------------------------------------------------+
-; Device         ; EP2C70F896C6                                                                      ;
-; JTAG usercode  ; 0xFFFFFFFF                                                                        ;
-; Checksum       ; 0x0062F920                                                                        ;
-+----------------+-----------------------------------------------------------------------------------+
++---------------------------------------------------------------------------+
+; Assembler Device Options: D:/lcd-driver-CFAH1602BTMCJP/src/lcd-driver.sof ;
++----------------+----------------------------------------------------------+
+; Option         ; Setting                                                  ;
++----------------+----------------------------------------------------------+
+; Device         ; EP2C70F896C6                                             ;
+; JTAG usercode  ; 0xFFFFFFFF                                               ;
+; Checksum       ; 0x00627092                                               ;
++----------------+----------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/ATWN_Yhlee/Desktop/lcd-driver-CFAH1602BTMCJP/src/lcd-driver.pof ;
-+--------------------+-------------------------------------------------------------------------------+
-; Option             ; Setting                                                                       ;
-+--------------------+-------------------------------------------------------------------------------+
-; Device             ; EPCS16                                                                        ;
-; JTAG usercode      ; 0x00000000                                                                    ;
-; Checksum           ; 0x187861C0                                                                    ;
-; Compression Ratio  ; 3                                                                             ;
-+--------------------+-------------------------------------------------------------------------------+
++---------------------------------------------------------------------------+
+; Assembler Device Options: D:/lcd-driver-CFAH1602BTMCJP/src/lcd-driver.pof ;
++--------------------+------------------------------------------------------+
+; Option             ; Setting                                              ;
++--------------------+------------------------------------------------------+
+; Device             ; EPCS16                                               ;
+; JTAG usercode      ; 0x00000000                                           ;
+; Checksum           ; 0x187B07C6                                           ;
+; Compression Ratio  ; 3                                                    ;
++--------------------+------------------------------------------------------+
 
 
 +--------------------+
@@ -115,14 +115,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 8.1 Build 163 10/28/2008 SJ Full Version
-    Info: Processing started: Mon Jun 24 22:50:10 2019
+    Info: Processing started: Wed Jun 26 11:36:13 2019
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off lcd-driver -c lcd-driver
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 379 megabytes
-    Info: Processing ended: Mon Jun 24 22:50:15 2019
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 321 megabytes
+    Info: Processing ended: Wed Jun 26 11:36:16 2019
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 

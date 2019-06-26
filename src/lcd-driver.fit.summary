@@ -1,15 +1,15 @@
-Fitter Status : Successful - Mon Jun 24 22:50:08 2019
+Fitter Status : Successful - Wed Jun 26 11:36:11 2019
 Quartus II Version : 8.1 Build 163 10/28/2008 SJ Full Version
 Revision Name : lcd-driver
 Top-level Entity Name : lcd_driver
 Family : Cyclone II
 Device : EP2C70F896C6
 Timing Models : Final
-Total logic elements : 235 / 68,416 ( < 1 % )
-    Total combinational functions : 224 / 68,416 ( < 1 % )
-    Dedicated logic registers : 137 / 68,416 ( < 1 % )
-Total registers : 137
-Total pins : 193 / 622 ( 31 % )
+Total logic elements : 176 / 68,416 ( < 1 % )
+    Total combinational functions : 176 / 68,416 ( < 1 % )
+    Dedicated logic registers : 80 / 68,416 ( < 1 % )
+Total registers : 80
+Total pins : 191 / 622 ( 31 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,152,000 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 300 ( 0 % )
