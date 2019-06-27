@@ -1,0 +1,74 @@
+总体设计文档
+
+1. 模块划分
+	lcd_driver: 顶层模块,声明和初始化硬件引脚,调用重置模块和显示模块,完成主要逻辑
+	LCD_DisPlay: 主要的显示模块, 根据系统的50MHz产生400Hz刷新频率,使用这个频率完成状态机运转
+				大部分状态是依照文档14章进行初始化(具体逻辑稍后描述), 
+				之后使用Print_String状态进行打印(具体逻辑稍后描述)
+	LCD_display_string: 本模块接收SW输入的值(hex), 经过转换后输出给out传回LCD_DisPlay模块
+				主要处理和合成8位数据,属于应用层逻辑,来控制输出形式
+
+2. LCD初始化逻辑
+	完全根据CFAH1602BTMCJP文档14章节进行:
+	状态->功能设置->显示关闭->显示清除->显示打开->模式设置
+	至此初始化完成,最后是打印状态,每个时钟信号都如此
+
+3. 打印逻辑
+	从SW获取到hex值, 传递给LCD_display_string模块, 
+	此模块将处理过的输入数据回传给out,即返回给LCD_DisPlay模块的Next_Char值, 这个值将一直给数据总线赋值
+	DATA_BUS的值总是DATA_BUS_VALUE, 当处于写状态时(读写中断), 最终到达Print状态&选择RS为data模式
+	数据DATA_BUS将被总线传输给LCD模块, 打印数据
+
+4. 时钟设计
+	由系统iCLK_50MHZ的50MHz产生输入频率, 经过20'h0F424次轮询,产生一次新频率,
+	新频率为400Hz, 打印模块的状态机使用这个400Hz作为工作频率
+
+5. RS选择为数据模式下的数据通路
+	SW[7:0] ->
+	lcd_driver(SW[7:0]) -> hex1,hex0 -> 
+	LCD_Display(hex0(hex0),hex1(hex1)) -> 
+	LCD_display_string(hex0(hex0),hex1(hex1)) -> out ->
+	LCD_Display(out(Next_Char)) -> DATA_BUS_VALUE ->
+	(LCD_RW && LCD_RS) -> 
+	DATA_BUS[7:0]
+
+
+
+6. 参考文献
+
+		SW8 (GLOBAL RESET) resets LCD
+		ENTITY LCD_Display IS
+		-- Enter number of live Hex hardware data values to display
+		-- (do not count ASCII character constants)
+			GENERIC(Num_Hex_Digits: Integer:= 2); 
+		-----------------------------------------------------------------------
+		-- LCD Displays 16 Characters on 2 lines
+		-- LCD_display string is an ASCII character string entered in hex for 
+		-- the two lines of the  LCD Display   (See ASCII to hex table below)
+		-- Edit LCD_Display_String entries above to modify display
+		-- Enter the ASCII character's 2 hex digit equivalent value
+		-- (see table below for ASCII hex values)
+		-- To display character assign ASCII value to LCD_display_string(x)
+		-- To skip a character use 8'h20" (ASCII space)
+		-- To dislay "live" hex values from hardware on LCD use the following: 
+		--   make array element for that character location 8'h0" & 4-bit field from Hex_Display_Data
+		--   state machine sees 8'h0" in high 4-bits & grabs the next lower 4-bits from Hex_Display_Data input
+		--   and performs 4-bit binary to ASCII conversion needed to print a hex digit
+		--   Num_Hex_Digits must be set to the count of hex data characters (ie. "00"s) in the display
+		--   Connect hardware bits to display to Hex_Display_Data input
+		-- To display less than 32 characters, terminate string with an entry of 8'hFE"
+		--  (fewer characters may slightly increase the LCD's data update rate)
+		------------------------------------------------------------------- 
+		--                        ASCII HEX TABLE
+		--  Hex                        Low Hex Digit
+		-- Value  0   1   2   3   4   5   6   7   8   9   A   B   C   D   E   F
+		------\----------------------------------------------------------------
+		--H  2 |  SP  !   "   #   $   %   &   '   (   )   *   +   ,   -   .   /
+		--i  3 |  0   1   2   3   4   5   6   7   8   9   :   ;   <   =   >   ?
+		--g  4 |  @   A   B   C   D   E   F   G   H   I   J   K   L   M   N   O
+		--h  5 |  P   Q   R   S   T   U   V   W   X   Y   Z   [   \   ]   ^   _
+		--   6 |  `   a   b   c   d   e   f   g   h   i   j   k   l   m   n   o
+		--   7 |  p   q   r   s   t   u   v   w   x   y   z   {   |   }   ~ DEL
+		-----------------------------------------------------------------------
+		-- Example "A" is row 4 column 1, so hex value is 8'h41"
+		-- *see LCD Controller's Datasheet for other graphics characters available
