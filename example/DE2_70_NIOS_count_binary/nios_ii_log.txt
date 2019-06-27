@@ -1,0 +1,133 @@
+Altera SOPC Builder Version 8.00 Build 215
+Copyright (c) 1999-2007 Altera Corporation.  All rights reserved.
+
+
+# 2008.10.21 14:24:11 (*) mk_custom_sdk starting
+# 2008.10.21 14:24:11 (*) Reading project D:/0Clare/DE2-70/Q80/DE2_70_NIOS_count_binary/nios_ii.ptf.
+
+# 2008.10.21 14:24:11 (*) Finding all CPUs
+
+# 2008.10.21 14:24:11 (*) Finding all available components
+# 2008.10.21 14:24:11 (*) Reading D:/0Clare/DE2-70/Q80/DE2_70_NIOS_count_binary/.sopc_builder/install.ptf
+
+# 2008.10.21 14:24:12 (*) Found 67 components
+
+# 2008.10.21 14:24:12 (*) Finding all peripherals
+
+# 2008.10.21 14:24:12 (*) Finding software components
+
+# 2008.10.21 14:24:13 (*) (Legacy SDK Generation Skipped)
+# 2008.10.21 14:24:13 (*) (All TCL Script Generation Skipped)
+# 2008.10.21 14:24:13 (*) (No Libraries Built)
+# 2008.10.21 14:24:13 (*) (Contents Generation Skipped)
+# 2008.10.21 14:24:13 (*) mk_custom_sdk finishing
+
+# 2008.10.21 14:24:13 (*) Starting generation for system: nios_ii.
+
+.
+.
+....
+.
+..
+.
+..
+.
+.
+.
+.
+
+# 2008.10.21 14:24:15 (*) Running Generator Program for cpu
+
+# 2008.10.21 14:24:17 (*)   Checking for plaintext license.
+# 2008.10.21 14:24:17 (*)   Plaintext license not found.
+# 2008.10.21 14:24:17 (*)   Checking for encrypted license (non-evaluation).
+# 2008.10.21 14:24:17 (*)   Encrypted license found.  SOF will not be time-limited.
+# 2008.10.21 14:24:27 (*)   Creating encrypted HDL
+
+# 2008.10.21 14:24:30 (*) Running Generator Program for onchip_mem
+
+# 2008.10.21 14:24:32 (*) Running Generator Program for pio_green_led
+
+# 2008.10.21 14:24:33 (*) Running Generator Program for pio_red_led
+
+# 2008.10.21 14:24:34 (*) Running Generator Program for pio_switch
+
+# 2008.10.21 14:24:36 (*) Running Generator Program for pio_button
+
+# 2008.10.21 14:24:37 (*) Running Generator Program for lcd
+
+# 2008.10.21 14:24:39 (*) Running Generator Program for sdram_u1
+
+# 2008.10.21 14:24:40 (*) Running Generator Program for sdram_u2
+
+# 2008.10.21 14:24:42 (*) Running Generator Program for sysid
+
+# 2008.10.21 14:24:44 (*) Running Generator Program for timer
+
+# 2008.10.21 14:24:45 (*) Running Generator Program for timer_stamp
+
+# 2008.10.21 14:24:47 (*) Running Generator Program for jtag_uart
+
+# 2008.10.21 14:24:48 (*) Running Generator Program for uart
+
+# 2008.10.21 14:24:50 (*) Running Generator Program for pll
+
+# 2008.10.21 14:24:57 (*) Running Generator Program for nios_ii_clock_0
+
+..
+
+# 2008.10.21 14:24:59 (*) Running Test Generator Program for sdram_u1
+
+# 2008.10.21 14:25:01 (*) Running Test Generator Program for sdram_u2
+
+# 2008.10.21 14:25:02 (*) Making arbitration and system (top) modules.
+
+# 2008.10.21 14:25:18 (*) Generating Quartus symbol for top level: nios_ii
+
+# 2008.10.21 14:25:18 (*) Generating Symbol D:/0Clare/DE2-70/Q80/DE2_70_NIOS_count_binary/nios_ii.bsf
+
+# 2008.10.21 14:25:18 (*) Creating command-line system-generation script: D:/0Clare/DE2-70/Q80/DE2_70_NIOS_count_binary/nios_ii_generation_script
+
+# 2008.10.21 14:25:18 (*) Running setup for HDL simulator: modelsim
+
+
+# 2008.10.21 14:25:18 (*) Setting up Quartus with nios_ii_setup_quartus.tcl
+c:/altera/80/quartus/bin/quartus_sh -t nios_ii_setup_quartus.tcl
+
+
+Info: *******************************************************************
+Info: Running Quartus II Shell
+    Info: Version 8.0 Build 215 05/29/2008 SJ Full Version
+    Info: Copyright (C) 1991-2008 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer 
+to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Tue Oct 21 14:25:18 2008
+Info: Command: quartus_sh -t nios_ii_setup_quartus.tcl
+Info: Evaluation of Tcl script nios_ii_setup_quartus.tcl was successful
+Info: Quartus II Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 48 megabytes
+    Info: Processing ended: Tue Oct 21 14:25:18 2008
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+# 2008.10.21 14:25:19 (*) Completed generation for system: nios_ii.
+# 2008.10.21 14:25:19 (*) THE FOLLOWING SYSTEM ITEMS HAVE BEEN GENERATED:
+  SOPC Builder database : D:/0Clare/DE2-70/Q80/DE2_70_NIOS_count_binary/nios_ii.ptf 
+  System HDL Model : D:/0Clare/DE2-70/Q80/DE2_70_NIOS_count_binary/nios_ii.v 
+  System Generation Script : D:/0Clare/DE2-70/Q80/DE2_70_NIOS_count_binary/nios_ii_generation_script 
+
+# 2008.10.21 14:25:19 (*) SUCCESS: SYSTEM GENERATION COMPLETED.
+
+
+Press 'Exit' to exit.

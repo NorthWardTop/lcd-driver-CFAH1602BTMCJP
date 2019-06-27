@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><preferences>
+  <systemtable>
+    <columns>
+      <connections preferredWidth="47" />
+      <irq preferredWidth="34" />
+      <inputclock preferredWidth="126" />
+    </columns>
+  </systemtable>
+  <clocktable>
+    <columns>
+      <clockname preferredWidth="472" />
+      <clocksource preferredWidth="468" />
+      <frequency preferredWidth="456" />
+    </columns>
+  </clocktable>
+  <window x="0" y="0" width="1920" height="1050" />
+  <library
+      expandedCategories="Bridges and Adapters/Memory Mapped,Terasic Technologies Inc.,USB,Bridges and Adapters" />
+</preferences>
