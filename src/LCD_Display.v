@@ -295,7 +295,7 @@ reg [11:0] chang;
     
     5'h0a: out <= 8'h20;
     
-     5'h0c: 
+    5'h0c: 
 	 begin
 		chang<={hex1,hex0};
 		//chang <=(dec[0]* 1+dec[1]* 2+dec[2]* 4+dec[3]* 8+dec[4]* 16+dec[5]* 32+dec[6]* 64+dec[7]*12);
