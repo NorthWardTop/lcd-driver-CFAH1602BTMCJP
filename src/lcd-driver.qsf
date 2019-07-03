@@ -79,3 +79,4 @@ set_location_assignment PIN_L7 -to SW[16]
 set_location_assignment PIN_L8 -to SW[17]
 set_location_assignment PIN_T29 -to K0_clk
 set_global_assignment -name MISC_FILE "C:/Users/SOPC/Desktop/src/lcd-driver.dpf"
+set_global_assignment -name MISC_FILE "C:/Users/ATWN_Yhlee/Desktop/lcd-driver-CFAH1602BTMCJP/src/lcd-driver.dpf"
