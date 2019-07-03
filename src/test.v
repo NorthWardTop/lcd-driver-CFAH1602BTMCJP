@@ -986,7 +986,6 @@ ENTITY LCD_Display IS
         
 module LCD_Display(iCLK_50MHZ, iRST_N, hex1, hex0, 
     LCD_RS,LCD_E,LCD_RW,DATA_BUS);
-    
 input iCLK_50MHZ, iRST_N;
 input [3:0] hex1, hex0;
 output LCD_RS, LCD_E, LCD_RW;

@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Wed Jun 26 11:36:03 2019
+Analysis & Synthesis Status : Successful - Wed Jul 03 12:38:49 2019
 Quartus II Version : 8.1 Build 163 10/28/2008 SJ Full Version
 Revision Name : lcd-driver
 Top-level Entity Name : lcd_driver
 Family : Cyclone II
-Total logic elements : 175
-    Total combinational functions : 175
-    Dedicated logic registers : 80
-Total registers : 80
-Total pins : 191
+Total logic elements : 344
+    Total combinational functions : 344
+    Dedicated logic registers : 84
+Total registers : 84
+Total pins : 33
 Total virtual pins : 0
-Total memory bits : 0
+Total memory bits : 128
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0

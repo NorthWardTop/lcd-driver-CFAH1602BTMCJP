@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lcd-driver
-Wed Jun 26 11:36:03 2019
+Wed Jul 03 12:38:49 2019
 Quartus II Version 8.1 Build 163 10/28/2008 SJ Full Version
 
 
@@ -12,15 +12,23 @@ Quartus II Version 8.1 Build 163 10/28/2008 SJ Full Version
   4. Analysis & Synthesis Source Files Read
   5. Analysis & Synthesis Resource Usage Summary
   6. Analysis & Synthesis Resource Utilization by Entity
-  7. State Machine - |lcd_driver|LCD_Display:u1|next_command
-  8. State Machine - |lcd_driver|LCD_Display:u1|state
-  9. User-Specified and Inferred Latches
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: LCD_Display:u1
- 14. Analysis & Synthesis Messages
- 15. Analysis & Synthesis Suppressed Messages
+  7. Analysis & Synthesis RAM Summary
+  8. State Machine - |lcd_driver|LCD_Display:u1|next_command
+  9. State Machine - |lcd_driver|LCD_Display:u1|state
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for LCD_Display:u1|LCD_display_string:u1|altsyncram:regs_rtl_0|altsyncram_o8l1:auto_generated
+ 15. Parameter Settings for User Entity Instance: LCD_Display:u1
+ 16. Parameter Settings for Inferred Entity Instance: LCD_Display:u1|LCD_display_string:u1|altsyncram:regs_rtl_0
+ 17. Parameter Settings for Inferred Entity Instance: LCD_Display:u1|LCD_display_string:u1|lpm_divide:Div1
+ 18. Parameter Settings for Inferred Entity Instance: LCD_Display:u1|LCD_display_string:u1|lpm_divide:Mod1
+ 19. Parameter Settings for Inferred Entity Instance: LCD_Display:u1|LCD_display_string:u1|lpm_divide:Mod2
+ 20. Parameter Settings for Inferred Entity Instance: LCD_Display:u1|LCD_display_string:u1|lpm_divide:Div0
+ 21. Parameter Settings for Inferred Entity Instance: LCD_Display:u1|LCD_display_string:u1|lpm_divide:Mod0
+ 22. Analysis & Synthesis Messages
+ 23. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -46,18 +54,18 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jun 26 11:36:03 2019    ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul 03 12:38:49 2019    ;
 ; Quartus II Version                 ; 8.1 Build 163 10/28/2008 SJ Full Version ;
 ; Revision Name                      ; lcd-driver                               ;
 ; Top-level Entity Name              ; lcd_driver                               ;
 ; Family                             ; Cyclone II                               ;
-; Total logic elements               ; 175                                      ;
-;     Total combinational functions  ; 175                                      ;
-;     Dedicated logic registers      ; 80                                       ;
-; Total registers                    ; 80                                       ;
-; Total pins                         ; 191                                      ;
+; Total logic elements               ; 344                                      ;
+;     Total combinational functions  ; 344                                      ;
+;     Dedicated logic registers      ; 84                                       ;
+; Total registers                    ; 84                                       ;
+; Total pins                         ; 33                                       ;
 ; Total virtual pins                 ; 0                                        ;
-; Total memory bits                  ; 0                                        ;
+; Total memory bits                  ; 128                                      ;
 ; Embedded Multiplier 9-bit elements ; 0                                        ;
 ; Total PLLs                         ; 0                                        ;
 +------------------------------------+------------------------------------------+
@@ -139,13 +147,36 @@ applicable agreement for further details.
 +----------------------------------------------------------------+--------------------+--------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                      ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                  ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------+
-; lcd_driver.v                     ; yes             ; User Verilog HDL File  ; D:/lcd-driver-CFAH1602BTMCJP/src/lcd_driver.v ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                       ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+
+; lcd_driver.v                     ; yes             ; User Verilog HDL File        ; C:/Users/SOPC/Desktop/src/lcd_driver.v                             ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/81/quartus/libraries/megafunctions/altsyncram.tdf        ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/altera/81/quartus/libraries/megafunctions/stratix_ram_block.inc ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/altera/81/quartus/libraries/megafunctions/lpm_mux.inc           ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/81/quartus/libraries/megafunctions/lpm_decode.inc        ;
+; aglobal81.inc                    ; yes             ; Megafunction                 ; c:/altera/81/quartus/libraries/megafunctions/aglobal81.inc         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/altera/81/quartus/libraries/megafunctions/a_rdenreg.inc         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/81/quartus/libraries/megafunctions/altrom.inc            ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/81/quartus/libraries/megafunctions/altram.inc            ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/81/quartus/libraries/megafunctions/altdpram.inc          ;
+; altqpram.inc                     ; yes             ; Megafunction                 ; c:/altera/81/quartus/libraries/megafunctions/altqpram.inc          ;
+; db/altsyncram_o8l1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/SOPC/Desktop/src/db/altsyncram_o8l1.tdf                   ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/81/quartus/libraries/megafunctions/lpm_divide.tdf        ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/81/quartus/libraries/megafunctions/abs_divider.inc       ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/81/quartus/libraries/megafunctions/sign_div_unsign.inc   ;
+; db/lpm_divide_1dm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/SOPC/Desktop/src/db/lpm_divide_1dm.tdf                    ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/SOPC/Desktop/src/db/sign_div_unsign_bkh.tdf               ;
+; db/alt_u_div_ove.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/SOPC/Desktop/src/db/alt_u_div_ove.tdf                     ;
+; db/add_sub_lkc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/SOPC/Desktop/src/db/add_sub_lkc.tdf                       ;
+; db/add_sub_mkc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/SOPC/Desktop/src/db/add_sub_mkc.tdf                       ;
+; db/lpm_divide_45m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/SOPC/Desktop/src/db/lpm_divide_45m.tdf                    ;
+; db/lpm_divide_4dm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/SOPC/Desktop/src/db/lpm_divide_4dm.tdf                    ;
+; db/sign_div_unsign_ekh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/SOPC/Desktop/src/db/sign_div_unsign_ekh.tdf               ;
+; db/alt_u_div_uve.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/SOPC/Desktop/src/db/alt_u_div_uve.tdf                     ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------+
@@ -153,41 +184,69 @@ applicable agreement for further details.
 +---------------------------------------------+-----------------------+
 ; Resource                                    ; Usage                 ;
 +---------------------------------------------+-----------------------+
-; Estimated Total logic elements              ; 175                   ;
+; Estimated Total logic elements              ; 344                   ;
 ;                                             ;                       ;
-; Total combinational functions               ; 175                   ;
+; Total combinational functions               ; 344                   ;
 ; Logic element usage by number of LUT inputs ;                       ;
-;     -- 4 input functions                    ; 80                    ;
-;     -- 3 input functions                    ; 28                    ;
-;     -- <=2 input functions                  ; 67                    ;
+;     -- 4 input functions                    ; 97                    ;
+;     -- 3 input functions                    ; 82                    ;
+;     -- <=2 input functions                  ; 165                   ;
 ;                                             ;                       ;
 ; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 134                   ;
-;     -- arithmetic mode                      ; 41                    ;
+;     -- normal mode                          ; 246                   ;
+;     -- arithmetic mode                      ; 98                    ;
 ;                                             ;                       ;
-; Total registers                             ; 80                    ;
-;     -- Dedicated logic registers            ; 80                    ;
+; Total registers                             ; 84                    ;
+;     -- Dedicated logic registers            ; 84                    ;
 ;     -- I/O registers                        ; 0                     ;
 ;                                             ;                       ;
-; I/O pins                                    ; 191                   ;
+; I/O pins                                    ; 33                    ;
+; Total memory bits                           ; 128                   ;
 ; Maximum fan-out node                        ; Reset_Delay:r0|oRESET ;
-; Maximum fan-out                             ; 58                    ;
-; Total fan-out                               ; 822                   ;
-; Average fan-out                             ; 1.84                  ;
+; Maximum fan-out                             ; 66                    ;
+; Total fan-out                               ; 1300                  ;
+; Average fan-out                             ; 2.77                  ;
 +---------------------------------------------+-----------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                         ;
-+-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
-; Compilation Hierarchy Node    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Library Name ;
-+-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
-; |lcd_driver                   ; 175 (0)           ; 80 (0)       ; 0           ; 0            ; 0       ; 0         ; 191  ; 0            ; |lcd_driver                                      ; work         ;
-;    |LCD_Display:u1|           ; 147 (99)          ; 59 (59)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1                       ; work         ;
-;       |LCD_display_string:u1| ; 48 (48)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1 ; work         ;
-;    |Reset_Delay:r0|           ; 28 (28)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|Reset_Delay:r0                       ; work         ;
-+-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                        ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                              ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |lcd_driver                                  ; 344 (0)           ; 84 (0)       ; 128         ; 0            ; 0       ; 0         ; 33   ; 0            ; |lcd_driver                                                                                                                                      ; work         ;
+;    |LCD_Display:u1|                          ; 316 (102)         ; 63 (59)      ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1                                                                                                                       ; work         ;
+;       |LCD_display_string:u1|                ; 214 (59)          ; 4 (4)        ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1                                                                                                 ; work         ;
+;          |altsyncram:regs_rtl_0|             ; 0 (0)             ; 0 (0)        ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1|altsyncram:regs_rtl_0                                                                           ; work         ;
+;             |altsyncram_o8l1:auto_generated| ; 0 (0)             ; 0 (0)        ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1|altsyncram:regs_rtl_0|altsyncram_o8l1:auto_generated                                            ; work         ;
+;          |lpm_divide:Div0|                   ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Div0                                                                                 ; work         ;
+;             |lpm_divide_4dm:auto_generated|  ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Div0|lpm_divide_4dm:auto_generated                                                   ; work         ;
+;                |sign_div_unsign_ekh:divider| ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Div0|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider                       ; work         ;
+;                   |alt_u_div_uve:divider|    ; 25 (25)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Div0|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider ; work         ;
+;          |lpm_divide:Div1|                   ; 56 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Div1                                                                                 ; work         ;
+;             |lpm_divide_1dm:auto_generated|  ; 56 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Div1|lpm_divide_1dm:auto_generated                                                   ; work         ;
+;                |sign_div_unsign_bkh:divider| ; 56 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Div1|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider                       ; work         ;
+;                   |alt_u_div_ove:divider|    ; 56 (56)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Div1|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider ; work         ;
+;          |lpm_divide:Mod1|                   ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Mod1                                                                                 ; work         ;
+;             |lpm_divide_45m:auto_generated|  ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Mod1|lpm_divide_45m:auto_generated                                                   ; work         ;
+;                |sign_div_unsign_bkh:divider| ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Mod1|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider                       ; work         ;
+;                   |alt_u_div_ove:divider|    ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Mod1|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider ; work         ;
+;          |lpm_divide:Mod2|                   ; 56 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Mod2                                                                                 ; work         ;
+;             |lpm_divide_45m:auto_generated|  ; 56 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Mod2|lpm_divide_45m:auto_generated                                                   ; work         ;
+;                |sign_div_unsign_bkh:divider| ; 56 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Mod2|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider                       ; work         ;
+;                   |alt_u_div_ove:divider|    ; 56 (56)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Mod2|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider ; work         ;
+;    |Reset_Delay:r0|                          ; 28 (28)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcd_driver|Reset_Delay:r0                                                                                                                       ; work         ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                ;
++------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+---------------------------------------------+
+; Name                                                                                                 ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                         ;
++------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+---------------------------------------------+
+; LCD_Display:u1|LCD_display_string:u1|altsyncram:regs_rtl_0|altsyncram_o8l1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 16           ; 8            ; 16           ; 8            ; 128  ; db/ram0_LCD_display_string_8e8bc469.hdl.mif ;
++------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+---------------------------------------------+
 
 
 Encoding Type:  One-Hot
@@ -236,14 +295,14 @@ Encoding Type:  One-Hot
 +----------------------------------------------------+----------------------------------------------+------------------------+
 ; Latch Name                                         ; Latch Enable Signal                          ; Free of Timing Hazards ;
 +----------------------------------------------------+----------------------------------------------+------------------------+
-; LCD_Display:u1|LCD_display_string:u1|chang[4]      ; LCD_Display:u1|LCD_display_string:u1|WideOr0 ; yes                    ;
-; LCD_Display:u1|LCD_display_string:u1|chang[0]      ; LCD_Display:u1|LCD_display_string:u1|WideOr0 ; yes                    ;
-; LCD_Display:u1|LCD_display_string:u1|chang[7]      ; LCD_Display:u1|LCD_display_string:u1|WideOr0 ; yes                    ;
-; LCD_Display:u1|LCD_display_string:u1|chang[3]      ; LCD_Display:u1|LCD_display_string:u1|WideOr0 ; yes                    ;
-; LCD_Display:u1|LCD_display_string:u1|chang[5]      ; LCD_Display:u1|LCD_display_string:u1|WideOr0 ; yes                    ;
-; LCD_Display:u1|LCD_display_string:u1|chang[1]      ; LCD_Display:u1|LCD_display_string:u1|WideOr0 ; yes                    ;
-; LCD_Display:u1|LCD_display_string:u1|chang[6]      ; LCD_Display:u1|LCD_display_string:u1|WideOr0 ; yes                    ;
-; LCD_Display:u1|LCD_display_string:u1|chang[2]      ; LCD_Display:u1|LCD_display_string:u1|WideOr0 ; yes                    ;
+; LCD_Display:u1|LCD_display_string:u1|dec[0]        ; LCD_Display:u1|LCD_display_string:u1|WideOr0 ; yes                    ;
+; LCD_Display:u1|LCD_display_string:u1|dec[1]        ; LCD_Display:u1|LCD_display_string:u1|WideOr0 ; yes                    ;
+; LCD_Display:u1|LCD_display_string:u1|dec[2]        ; LCD_Display:u1|LCD_display_string:u1|WideOr0 ; yes                    ;
+; LCD_Display:u1|LCD_display_string:u1|dec[3]        ; LCD_Display:u1|LCD_display_string:u1|WideOr0 ; yes                    ;
+; LCD_Display:u1|LCD_display_string:u1|dec[4]        ; LCD_Display:u1|LCD_display_string:u1|WideOr0 ; yes                    ;
+; LCD_Display:u1|LCD_display_string:u1|dec[7]        ; LCD_Display:u1|LCD_display_string:u1|WideOr0 ; yes                    ;
+; LCD_Display:u1|LCD_display_string:u1|dec[5]        ; LCD_Display:u1|LCD_display_string:u1|WideOr0 ; yes                    ;
+; LCD_Display:u1|LCD_display_string:u1|dec[6]        ; LCD_Display:u1|LCD_display_string:u1|WideOr0 ; yes                    ;
 ; Number of user-specified and inferred latches = 8  ;                                              ;                        ;
 +----------------------------------------------------+----------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -255,10 +314,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Register name                         ; Reason for Removal                     ;
 +---------------------------------------+----------------------------------------+
 ; LCD_Display:u1|LCD_RW_INT             ; Stuck at GND due to stuck port data_in ;
+; LCD_Display:u1|next_command~9         ; Lost fanout                            ;
 ; LCD_Display:u1|next_command~10        ; Lost fanout                            ;
 ; LCD_Display:u1|next_command~11        ; Lost fanout                            ;
 ; LCD_Display:u1|next_command~12        ; Lost fanout                            ;
-; LCD_Display:u1|next_command~13        ; Lost fanout                            ;
 ; LCD_Display:u1|state~44               ; Lost fanout                            ;
 ; LCD_Display:u1|state~45               ; Lost fanout                            ;
 ; LCD_Display:u1|state~46               ; Lost fanout                            ;
@@ -272,9 +331,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 80    ;
+; Total registers                              ; 84    ;
 ; Number of registers using Synchronous Clear  ; 20    ;
-; Number of registers using Synchronous Load   ; 2     ;
+; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 34    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 43    ;
@@ -282,13 +341,23 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |lcd_driver|LCD_Display:u1|DATA_BUS_VALUE[4] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |lcd_driver|LCD_Display:u1|DATA_BUS_VALUE[4]          ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 10 LEs               ; 4 LEs                  ; No         ; |lcd_driver|LCD_Display:u1|LCD_display_string:u1|Mux7 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Source assignments for LCD_Display:u1|LCD_display_string:u1|altsyncram:regs_rtl_0|altsyncram_o8l1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                 ;
++---------------------------------+--------------------+------+----------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                  ;
++---------------------------------+--------------------+------+----------------------------------------------------+
 
 
 +-------------------------------------------------------------+
@@ -313,13 +382,187 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: LCD_Display:u1|LCD_display_string:u1|altsyncram:regs_rtl_0 ;
++------------------------------------+---------------------------------------------+--------------------------+
+; Parameter Name                     ; Value                                       ; Type                     ;
++------------------------------------+---------------------------------------------+--------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                           ; Untyped                  ;
+; AUTO_CARRY_CHAINS                  ; ON                                          ; AUTO_CARRY               ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                         ; IGNORE_CARRY             ;
+; AUTO_CASCADE_CHAINS                ; ON                                          ; AUTO_CASCADE             ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                         ; IGNORE_CASCADE           ;
+; WIDTH_BYTEENA                      ; 1                                           ; Untyped                  ;
+; OPERATION_MODE                     ; DUAL_PORT                                   ; Untyped                  ;
+; WIDTH_A                            ; 8                                           ; Untyped                  ;
+; WIDTHAD_A                          ; 4                                           ; Untyped                  ;
+; NUMWORDS_A                         ; 16                                          ; Untyped                  ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                ; Untyped                  ;
+; ADDRESS_ACLR_A                     ; NONE                                        ; Untyped                  ;
+; OUTDATA_ACLR_A                     ; NONE                                        ; Untyped                  ;
+; WRCONTROL_ACLR_A                   ; NONE                                        ; Untyped                  ;
+; INDATA_ACLR_A                      ; NONE                                        ; Untyped                  ;
+; BYTEENA_ACLR_A                     ; NONE                                        ; Untyped                  ;
+; WIDTH_B                            ; 8                                           ; Untyped                  ;
+; WIDTHAD_B                          ; 4                                           ; Untyped                  ;
+; NUMWORDS_B                         ; 16                                          ; Untyped                  ;
+; INDATA_REG_B                       ; CLOCK1                                      ; Untyped                  ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                      ; Untyped                  ;
+; RDCONTROL_REG_B                    ; CLOCK1                                      ; Untyped                  ;
+; ADDRESS_REG_B                      ; CLOCK1                                      ; Untyped                  ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                ; Untyped                  ;
+; BYTEENA_REG_B                      ; CLOCK1                                      ; Untyped                  ;
+; INDATA_ACLR_B                      ; NONE                                        ; Untyped                  ;
+; WRCONTROL_ACLR_B                   ; NONE                                        ; Untyped                  ;
+; ADDRESS_ACLR_B                     ; NONE                                        ; Untyped                  ;
+; OUTDATA_ACLR_B                     ; NONE                                        ; Untyped                  ;
+; RDCONTROL_ACLR_B                   ; NONE                                        ; Untyped                  ;
+; BYTEENA_ACLR_B                     ; NONE                                        ; Untyped                  ;
+; WIDTH_BYTEENA_A                    ; 1                                           ; Untyped                  ;
+; WIDTH_BYTEENA_B                    ; 1                                           ; Untyped                  ;
+; RAM_BLOCK_TYPE                     ; AUTO                                        ; Untyped                  ;
+; BYTE_SIZE                          ; 8                                           ; Untyped                  ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                   ; Untyped                  ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                        ; Untyped                  ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                        ; Untyped                  ;
+; INIT_FILE                          ; db/ram0_LCD_display_string_8e8bc469.hdl.mif ; Untyped                  ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                      ; Untyped                  ;
+; MAXIMUM_DEPTH                      ; 0                                           ; Untyped                  ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                      ; Untyped                  ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                      ; Untyped                  ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                      ; Untyped                  ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                      ; Untyped                  ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                             ; Untyped                  ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                             ; Untyped                  ;
+; ENABLE_ECC                         ; FALSE                                       ; Untyped                  ;
+; DEVICE_FAMILY                      ; Cyclone II                                  ; Untyped                  ;
+; CBXI_PARAMETER                     ; altsyncram_o8l1                             ; Untyped                  ;
++------------------------------------+---------------------------------------------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: LCD_Display:u1|LCD_display_string:u1|lpm_divide:Div1 ;
++------------------------+----------------+-------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                        ;
++------------------------+----------------+-------------------------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                                     ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                     ;
+; CBXI_PARAMETER         ; lpm_divide_1dm ; Untyped                                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                              ;
++------------------------+----------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: LCD_Display:u1|LCD_display_string:u1|lpm_divide:Mod1 ;
++------------------------+----------------+-------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                        ;
++------------------------+----------------+-------------------------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                                     ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                     ;
+; CBXI_PARAMETER         ; lpm_divide_45m ; Untyped                                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                              ;
++------------------------+----------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: LCD_Display:u1|LCD_display_string:u1|lpm_divide:Mod2 ;
++------------------------+----------------+-------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                        ;
++------------------------+----------------+-------------------------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                                     ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                     ;
+; CBXI_PARAMETER         ; lpm_divide_45m ; Untyped                                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                              ;
++------------------------+----------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: LCD_Display:u1|LCD_display_string:u1|lpm_divide:Div0 ;
++------------------------+----------------+-------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                        ;
++------------------------+----------------+-------------------------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                                     ;
+; LPM_WIDTHD             ; 7              ; Untyped                                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                     ;
+; CBXI_PARAMETER         ; lpm_divide_4dm ; Untyped                                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                              ;
++------------------------+----------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: LCD_Display:u1|LCD_display_string:u1|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                        ;
++------------------------+----------------+-------------------------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                                     ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                     ;
+; CBXI_PARAMETER         ; lpm_divide_45m ; Untyped                                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                              ;
++------------------------+----------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 8.1 Build 163 10/28/2008 SJ Full Version
-    Info: Processing started: Wed Jun 26 11:36:01 2019
+    Info: Processing started: Wed Jul 03 12:38:45 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lcd-driver -c lcd-driver
 Info: Found 4 design units, including 4 entities, in source file lcd_driver.v
     Info: Found entity 1: lcd_driver
@@ -327,140 +570,145 @@ Info: Found 4 design units, including 4 entities, in source file lcd_driver.v
     Info: Found entity 3: LCD_display_string
     Info: Found entity 4: Reset_Delay
 Info: Elaborating entity "lcd_driver" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at lcd_driver.v(24): object "RST" assigned a value but never read
-Warning (10034): Output port "LEDG[8]" at lcd_driver.v(7) has no driver
-Warning (10034): Output port "LEDG[7]" at lcd_driver.v(7) has no driver
-Warning (10034): Output port "LEDG[6]" at lcd_driver.v(7) has no driver
-Warning (10034): Output port "LEDG[5]" at lcd_driver.v(7) has no driver
-Warning (10034): Output port "LEDG[4]" at lcd_driver.v(7) has no driver
-Warning (10034): Output port "LEDG[3]" at lcd_driver.v(7) has no driver
-Warning (10034): Output port "LEDG[2]" at lcd_driver.v(7) has no driver
-Warning (10034): Output port "LEDG[1]" at lcd_driver.v(7) has no driver
-Warning (10034): Output port "LEDG[0]" at lcd_driver.v(7) has no driver
 Info: Elaborating entity "Reset_Delay" for hierarchy "Reset_Delay:r0"
 Info: Elaborating entity "LCD_Display" for hierarchy "LCD_Display:u1"
 Info: Elaborating entity "LCD_display_string" for hierarchy "LCD_Display:u1|LCD_display_string:u1"
-Warning (10240): Verilog HDL Always Construct warning at lcd_driver.v(350): inferring latch(es) for variable "chang", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "chang[0]" at lcd_driver.v(350)
-Info (10041): Inferred latch for "chang[1]" at lcd_driver.v(350)
-Info (10041): Inferred latch for "chang[2]" at lcd_driver.v(350)
-Info (10041): Inferred latch for "chang[3]" at lcd_driver.v(350)
-Info (10041): Inferred latch for "chang[4]" at lcd_driver.v(350)
-Info (10041): Inferred latch for "chang[5]" at lcd_driver.v(350)
-Info (10041): Inferred latch for "chang[6]" at lcd_driver.v(350)
-Info (10041): Inferred latch for "chang[7]" at lcd_driver.v(350)
-Info (10041): Inferred latch for "chang[8]" at lcd_driver.v(350)
-Info (10041): Inferred latch for "chang[9]" at lcd_driver.v(350)
-Info (10041): Inferred latch for "chang[10]" at lcd_driver.v(350)
-Info (10041): Inferred latch for "chang[11]" at lcd_driver.v(350)
+Warning (10230): Verilog HDL assignment warning at lcd_driver.v(377): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at lcd_driver.v(383): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at lcd_driver.v(389): truncated value with size 32 to match size of target (4)
+Warning (10240): Verilog HDL Always Construct warning at lcd_driver.v(361): inferring latch(es) for variable "dec", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at lcd_driver.v(361): inferring latch(es) for variable "b", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "dec[0]" at lcd_driver.v(361)
+Info (10041): Inferred latch for "dec[1]" at lcd_driver.v(361)
+Info (10041): Inferred latch for "dec[2]" at lcd_driver.v(361)
+Info (10041): Inferred latch for "dec[3]" at lcd_driver.v(361)
+Info (10041): Inferred latch for "dec[4]" at lcd_driver.v(361)
+Info (10041): Inferred latch for "dec[5]" at lcd_driver.v(361)
+Info (10041): Inferred latch for "dec[6]" at lcd_driver.v(361)
+Info (10041): Inferred latch for "dec[7]" at lcd_driver.v(361)
+Warning: Inferred dual-clock RAM node "LCD_Display:u1|LCD_display_string:u1|regs~0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Info: Inferred 1 megafunctions from design logic
+    Info: Inferred altsyncram megafunction from the following design logic: "LCD_Display:u1|LCD_display_string:u1|regs~0" 
+        Info: Parameter OPERATION_MODE set to DUAL_PORT
+        Info: Parameter WIDTH_A set to 8
+        Info: Parameter WIDTHAD_A set to 4
+        Info: Parameter NUMWORDS_A set to 16
+        Info: Parameter WIDTH_B set to 8
+        Info: Parameter WIDTHAD_B set to 4
+        Info: Parameter NUMWORDS_B set to 16
+        Info: Parameter ADDRESS_ACLR_A set to NONE
+        Info: Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info: Parameter ADDRESS_ACLR_B set to NONE
+        Info: Parameter OUTDATA_ACLR_B set to NONE
+        Info: Parameter ADDRESS_REG_B set to CLOCK1
+        Info: Parameter INDATA_ACLR_A set to NONE
+        Info: Parameter WRCONTROL_ACLR_A set to NONE
+        Info: Parameter RAM_BLOCK_TYPE set to AUTO
+        Info: Parameter INIT_FILE set to db/ram0_LCD_display_string_8e8bc469.hdl.mif
+Info: Inferred 5 megafunctions from design logic
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LCD_Display:u1|LCD_display_string:u1|Div1"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LCD_Display:u1|LCD_display_string:u1|Mod1"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LCD_Display:u1|LCD_display_string:u1|Mod2"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LCD_Display:u1|LCD_display_string:u1|Div0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "LCD_Display:u1|LCD_display_string:u1|Mod0"
+Info: Elaborated megafunction instantiation "LCD_Display:u1|LCD_display_string:u1|altsyncram:regs_rtl_0"
+Info: Instantiated megafunction "LCD_Display:u1|LCD_display_string:u1|altsyncram:regs_rtl_0" with the following parameter:
+    Info: Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info: Parameter "WIDTH_A" = "8"
+    Info: Parameter "WIDTHAD_A" = "4"
+    Info: Parameter "NUMWORDS_A" = "16"
+    Info: Parameter "WIDTH_B" = "8"
+    Info: Parameter "WIDTHAD_B" = "4"
+    Info: Parameter "NUMWORDS_B" = "16"
+    Info: Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info: Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info: Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info: Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info: Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info: Parameter "INDATA_ACLR_A" = "NONE"
+    Info: Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info: Parameter "RAM_BLOCK_TYPE" = "AUTO"
+    Info: Parameter "INIT_FILE" = "db/ram0_LCD_display_string_8e8bc469.hdl.mif"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_o8l1.tdf
+    Info: Found entity 1: altsyncram_o8l1
+Info: Elaborated megafunction instantiation "LCD_Display:u1|LCD_display_string:u1|lpm_divide:Div1"
+Info: Instantiated megafunction "LCD_Display:u1|LCD_display_string:u1|lpm_divide:Div1" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "8"
+    Info: Parameter "LPM_WIDTHD" = "4"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_1dm.tdf
+    Info: Found entity 1: lpm_divide_1dm
+Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
+    Info: Found entity 1: sign_div_unsign_bkh
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_ove.tdf
+    Info: Found entity 1: alt_u_div_ove
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_lkc.tdf
+    Info: Found entity 1: add_sub_lkc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_mkc.tdf
+    Info: Found entity 1: add_sub_mkc
+Info: Elaborated megafunction instantiation "LCD_Display:u1|LCD_display_string:u1|lpm_divide:Mod1"
+Info: Instantiated megafunction "LCD_Display:u1|LCD_display_string:u1|lpm_divide:Mod1" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "8"
+    Info: Parameter "LPM_WIDTHD" = "4"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_45m.tdf
+    Info: Found entity 1: lpm_divide_45m
+Info: Elaborated megafunction instantiation "LCD_Display:u1|LCD_display_string:u1|lpm_divide:Div0"
+Info: Instantiated megafunction "LCD_Display:u1|LCD_display_string:u1|lpm_divide:Div0" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "8"
+    Info: Parameter "LPM_WIDTHD" = "7"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_4dm.tdf
+    Info: Found entity 1: lpm_divide_4dm
+Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_ekh.tdf
+    Info: Found entity 1: sign_div_unsign_ekh
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_uve.tdf
+    Info: Found entity 1: alt_u_div_uve
 Warning: TRI or OPNDRN buffers permanently enabled
-    Warning: Node "LCD_Display:u1|DATA_BUS[0]~0"
-    Warning: Node "LCD_Display:u1|DATA_BUS[1]~1"
-    Warning: Node "LCD_Display:u1|DATA_BUS[2]~2"
-    Warning: Node "LCD_Display:u1|DATA_BUS[3]~3"
-    Warning: Node "LCD_Display:u1|DATA_BUS[4]~4"
-    Warning: Node "LCD_Display:u1|DATA_BUS[5]~5"
-    Warning: Node "LCD_Display:u1|DATA_BUS[6]~6"
-    Warning: Node "LCD_Display:u1|DATA_BUS[7]~7"
+    Warning: Node "LCD_Display:u1|DATA_BUS[0]"
+    Warning: Node "LCD_Display:u1|DATA_BUS[1]"
+    Warning: Node "LCD_Display:u1|DATA_BUS[2]"
+    Warning: Node "LCD_Display:u1|DATA_BUS[3]"
+    Warning: Node "LCD_Display:u1|DATA_BUS[4]"
+    Warning: Node "LCD_Display:u1|DATA_BUS[5]"
+    Warning: Node "LCD_Display:u1|DATA_BUS[6]"
+    Warning: Node "LCD_Display:u1|DATA_BUS[7]"
 Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[0]" is stuck at VCC
-    Warning (13410): Pin "HEX0[1]" is stuck at VCC
-    Warning (13410): Pin "HEX0[2]" is stuck at VCC
-    Warning (13410): Pin "HEX0[3]" is stuck at VCC
-    Warning (13410): Pin "HEX0[4]" is stuck at VCC
-    Warning (13410): Pin "HEX0[5]" is stuck at VCC
-    Warning (13410): Pin "HEX0[6]" is stuck at VCC
-    Warning (13410): Pin "HEX1[0]" is stuck at VCC
-    Warning (13410): Pin "HEX1[1]" is stuck at VCC
-    Warning (13410): Pin "HEX1[2]" is stuck at VCC
-    Warning (13410): Pin "HEX1[3]" is stuck at VCC
-    Warning (13410): Pin "HEX1[4]" is stuck at VCC
-    Warning (13410): Pin "HEX1[5]" is stuck at VCC
-    Warning (13410): Pin "HEX1[6]" is stuck at VCC
-    Warning (13410): Pin "HEX2[0]" is stuck at VCC
-    Warning (13410): Pin "HEX2[1]" is stuck at VCC
-    Warning (13410): Pin "HEX2[2]" is stuck at VCC
-    Warning (13410): Pin "HEX2[3]" is stuck at VCC
-    Warning (13410): Pin "HEX2[4]" is stuck at VCC
-    Warning (13410): Pin "HEX2[5]" is stuck at VCC
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC
-    Warning (13410): Pin "HEX3[0]" is stuck at VCC
-    Warning (13410): Pin "HEX3[1]" is stuck at VCC
-    Warning (13410): Pin "HEX3[2]" is stuck at VCC
-    Warning (13410): Pin "HEX3[3]" is stuck at VCC
-    Warning (13410): Pin "HEX3[4]" is stuck at VCC
-    Warning (13410): Pin "HEX3[5]" is stuck at VCC
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC
-    Warning (13410): Pin "HEX4[0]" is stuck at VCC
-    Warning (13410): Pin "HEX4[1]" is stuck at VCC
-    Warning (13410): Pin "HEX4[2]" is stuck at VCC
-    Warning (13410): Pin "HEX4[3]" is stuck at VCC
-    Warning (13410): Pin "HEX4[4]" is stuck at VCC
-    Warning (13410): Pin "HEX4[5]" is stuck at VCC
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC
-    Warning (13410): Pin "HEX5[0]" is stuck at VCC
-    Warning (13410): Pin "HEX5[1]" is stuck at VCC
-    Warning (13410): Pin "HEX5[2]" is stuck at VCC
-    Warning (13410): Pin "HEX5[3]" is stuck at VCC
-    Warning (13410): Pin "HEX5[4]" is stuck at VCC
-    Warning (13410): Pin "HEX5[5]" is stuck at VCC
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC
-    Warning (13410): Pin "HEX6[0]" is stuck at VCC
-    Warning (13410): Pin "HEX6[1]" is stuck at VCC
-    Warning (13410): Pin "HEX6[2]" is stuck at VCC
-    Warning (13410): Pin "HEX6[3]" is stuck at VCC
-    Warning (13410): Pin "HEX6[4]" is stuck at VCC
-    Warning (13410): Pin "HEX6[5]" is stuck at VCC
-    Warning (13410): Pin "HEX6[6]" is stuck at VCC
-    Warning (13410): Pin "HEX7[0]" is stuck at VCC
-    Warning (13410): Pin "HEX7[1]" is stuck at VCC
-    Warning (13410): Pin "HEX7[2]" is stuck at VCC
-    Warning (13410): Pin "HEX7[3]" is stuck at VCC
-    Warning (13410): Pin "HEX7[4]" is stuck at VCC
-    Warning (13410): Pin "HEX7[5]" is stuck at VCC
-    Warning (13410): Pin "HEX7[6]" is stuck at VCC
-    Warning (13410): Pin "LEDG[0]" is stuck at GND
-    Warning (13410): Pin "LEDG[1]" is stuck at GND
-    Warning (13410): Pin "LEDG[2]" is stuck at GND
-    Warning (13410): Pin "LEDG[3]" is stuck at GND
-    Warning (13410): Pin "LEDG[4]" is stuck at GND
-    Warning (13410): Pin "LEDG[5]" is stuck at GND
-    Warning (13410): Pin "LEDG[6]" is stuck at GND
-    Warning (13410): Pin "LEDG[7]" is stuck at GND
-    Warning (13410): Pin "LEDG[8]" is stuck at GND
     Warning (13410): Pin "LCD_ON" is stuck at VCC
     Warning (13410): Pin "LCD_BLON" is stuck at VCC
     Warning (13410): Pin "LCD_RW" is stuck at GND
 Info: 8 registers lost all their fanouts during netlist optimizations. The first 8 are displayed below.
+    Info: Register "LCD_Display:u1|next_command~9" lost all its fanouts during netlist optimizations.
     Info: Register "LCD_Display:u1|next_command~10" lost all its fanouts during netlist optimizations.
     Info: Register "LCD_Display:u1|next_command~11" lost all its fanouts during netlist optimizations.
     Info: Register "LCD_Display:u1|next_command~12" lost all its fanouts during netlist optimizations.
-    Info: Register "LCD_Display:u1|next_command~13" lost all its fanouts during netlist optimizations.
     Info: Register "LCD_Display:u1|state~44" lost all its fanouts during netlist optimizations.
     Info: Register "LCD_Display:u1|state~45" lost all its fanouts during netlist optimizations.
     Info: Register "LCD_Display:u1|state~46" lost all its fanouts during netlist optimizations.
     Info: Register "LCD_Display:u1|state~47" lost all its fanouts during netlist optimizations.
-Info: Generated suppressed messages file D:/lcd-driver-CFAH1602BTMCJP/src/lcd-driver.map.smsg
-Warning: Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[0]"
-    Warning (15610): No output dependent on input pin "KEY[1]"
-    Warning (15610): No output dependent on input pin "KEY[2]"
-    Warning (15610): No output dependent on input pin "KEY[3]"
-Info: Implemented 369 device resources after synthesis - the final resource count might be different
-    Info: Implemented 23 input pins
-    Info: Implemented 88 output pins
-    Info: Implemented 80 bidirectional pins
-    Info: Implemented 178 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 94 warnings
-    Info: Peak virtual memory: 203 megabytes
-    Info: Processing ended: Wed Jun 26 11:36:03 2019
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+Info: Generated suppressed messages file C:/Users/SOPC/Desktop/src/lcd-driver.map.smsg
+Warning: Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[8]"
+    Warning (15610): No output dependent on input pin "SW[9]"
+Info: Implemented 392 device resources after synthesis - the final resource count might be different
+    Info: Implemented 20 input pins
+    Info: Implemented 5 output pins
+    Info: Implemented 8 bidirectional pins
+    Info: Implemented 351 logic cells
+    Info: Implemented 8 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 22 warnings
+    Info: Peak virtual memory: 207 megabytes
+    Info: Processing ended: Wed Jul 03 12:38:49 2019
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in D:/lcd-driver-CFAH1602BTMCJP/src/lcd-driver.map.smsg.
+The suppressed messages can be found in C:/Users/SOPC/Desktop/src/lcd-driver.map.smsg.
 
 

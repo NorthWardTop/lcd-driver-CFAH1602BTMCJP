@@ -1,2 +1,1 @@
-Info (10281): Verilog HDL Declaration information at lcd_driver.v(6): object "HEX1" differs only in case from object "hex1" in the same scope
-Info (10281): Verilog HDL Declaration information at lcd_driver.v(6): object "HEX0" differs only in case from object "hex0" in the same scope
+Warning (10268): Verilog HDL information at lcd_driver.v(361): always construct contains both blocking and non-blocking assignments

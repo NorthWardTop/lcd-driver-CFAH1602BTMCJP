@@ -1,5 +1,11 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="lcd-driver">
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_4dm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Mod1" CBX_FILE_NAME="lpm_divide_45m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_driver|LCD_Display:u1|LCD_display_string:u1|altsyncram:regs_rtl_0" CBX_FILE_NAME="altsyncram_o8l1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_1dm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_45m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_driver|LCD_Display:u1|LCD_display_string:u1|lpm_divide:Mod2" CBX_FILE_NAME="lpm_divide_45m.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
